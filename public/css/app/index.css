@@ -1,0 +1,6 @@
+/* CSS 모듈 import */
+@import "./normalize.css";
+@import "./layout.css";
+@import "./main.css";
+@import "./common.css";
+@import "./font.css";

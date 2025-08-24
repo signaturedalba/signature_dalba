@@ -1,0 +1,605 @@
+.main-content {
+  position: relative;
+  z-index: 15;
+  will-change: scroll-position;
+  background-color: #ebeaef;
+}
+
+.scroll-indicator {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 32px;
+  left: 0;
+  z-index: 1;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  width: -webkit-max-content;
+  width: max-content;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.scroll-indicator__text {
+  font-weight: 400;
+  font-size: 8px;
+}
+
+.scroll-indicator__animation,
+.scroll-indicator__animation::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: gray;
+  width: 1px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.scroll-indicator__animation::before {
+  animation: moveToBottom 2.5s linear 0.1s infinite normal;
+  animation-iteration-count: infinite;
+  background-color: #000;
+  content: "";
+}
+
+@keyframes moveToBottom {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero__sub-title {
+  display: block;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.hero__main-title {
+  font-size: 54px;
+  line-height: 62px;
+}
+
+.fade-in-text {
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  transform: translateZ(0);
+  z-index: 1;
+  backface-visibility: hidden;
+  will-change: transform;
+  contain: paint;
+  background: #ebeaef;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.fade-in-text__paragraph {
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  text-rendering: optimizeLegibility;
+}
+
+.fade-in-text__word {
+  position: relative;
+  transition: color 0.3s linear;
+  color: #d8d8d8;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.parallax {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax__picture {
+  height: 100%;
+}
+
+.parallax__image {
+  width: 200%;
+  max-width: none;
+  height: auto;
+  object-fit: cover;
+}
+
+.parallax__container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.parallax__main-title {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 120%;
+}
+
+.parallax__paragraph {
+  font-weight: 300;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 0.1px;
+}
+
+.horizontal-scroll {
+  position: relative;
+  will-change: transform;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.horizontal-scroll__list {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal-scroll__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  clip-path: inset(0 0 0 0);
+  will-change: clip-path;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 중요: 가로로 줄어들 때 이미지를 마스킹 */
+}
+
+.horizontal-scroll__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.horizontal-scroll__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.horizontal-scroll__content {
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 2;
+  will-change: transform;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.horizontal-scroll__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.horizontal-scroll__main-title {
+  font-size: 54px;
+  line-height: 62px;
+}
+
+.horizontal-scroll__sub-title {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.horizontal-scroll__paragraph {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.video-modal-preview {
+  position: absolute;
+  bottom: 5%;
+  left: 8%;
+  z-index: 20;
+  border: 1px solid #fff;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.video-modal-preview__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-modal-preview__control {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+}
+
+.video-modal-preview__control:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.video-modal-preview__icon {
+  height: 12px;
+}
+
+.video-modal-preview__icon path {
+  fill: #fff;
+}
+
+.video-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform; /* GPU 가속 최적화 */
+  height: 100%;
+}
+
+.video-modal__video {
+  will-change: transform; /* GPU 가속 최적화 */
+  width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.extension {
+  position: relative;
+  overflow: hidden;
+}
+
+.extension__container {
+  overflow: hidden;
+}
+
+.extension__content {
+  display: flex;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.extension__main-title {
+  font-size: 54px;
+  line-height: 62px;
+}
+
+.extension__paragraph {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.slide-up-text {
+  background-image: url(https://www.chanel.com/puls-img/1728655303968-n1camelliaskinbenefitsdjpg_1660x2880.jpg);
+  background-size: cover;
+  overflow: hidden;
+  color: #fff;
+}
+
+.slide-up-text__container {
+  position: relative;
+  padding: 176px 8.0555555556% 0 8.0555555556%;
+  max-width: 83.875rem;
+  height: 100vh;
+}
+
+.slide-up-text__content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 86px;
+  width: 100%;
+  max-width: 671px;
+}
+
+.slide-up-text__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slide-up-text__sub-title {
+  font-size: 16px;
+}
+
+.slide-up-text__main-title {
+  font-size: 54px;
+  line-height: 62px;
+}
+
+.slide-up-text__paragraph {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.slide-up-text__effect {
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.slide-up-text__accent {
+  position: relative;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 90px;
+}
+
+.slide-up-text__accent-sup {
+  vertical-align: top;
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 100px;
+}
+
+.carousel {
+  will-change: transform;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.carousel__container {
+  display: flex;
+  position: sticky;
+  top: 0;
+  align-items: center;
+  will-change: transform;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel__list {
+  display: flex;
+  gap: 5px;
+  will-change: transform;
+  padding: 0 40% 0 70%;
+  overflow-x: visible;
+}
+
+.carousel__item {
+  flex-shrink: 0;
+  height: 670px;
+}
+
+.carousel__item--video {
+  width: 536px;
+}
+
+.carousel__item--image {
+  width: 345px;
+}
+
+.carousel__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__picture {
+  width: 100%;
+  height: 100%;
+}
+
+.discover {
+  bottom: 0;
+  z-index: 10;
+  background-color: #ebebef;
+  overflow: hidden;
+}
+
+.discover__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-height: 100vh;
+}
+
+.discover__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.discover__main-title {
+  display: block;
+  color: #a42135;
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 65px;
+}
+
+.discover__link {
+  margin-top: 30px;
+  padding: 12px 21px 14px;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  line-height: 1.2727272727;
+  text-transform: uppercase;
+}
+
+.products {
+  margin-top: 50px;
+  border-bottom: 10px solid #000;
+  width: 100%;
+}
+
+.products__container {
+  box-sizing: content-box;
+  margin: auto;
+  padding-right: 8.0555555556%;
+  padding-left: 8.0555555556%;
+  width: 100%;
+  max-width: 83.875rem;
+}
+
+.products__list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 15px;
+  margin: auto;
+}
+
+.products__item {
+  position: relative;
+}
+
+.products__item-1 {
+  width: 9%;
+}
+
+.products__item-1 .product-link {
+  transform: translate(100%, -20%);
+}
+
+.products__item-2 {
+  width: 10%;
+}
+
+.products__item-2 .product-link {
+  transform: translate(50%, -100%);
+}
+
+.products__item-3 {
+  width: 8%;
+}
+
+.products__item-3 .product-link {
+  transform: translate(80%, -20%);
+}
+
+.products__item-4 {
+  width: 13%;
+}
+
+.products__item-4 .product-link {
+  transform: translate(0%, -80%);
+}
+
+.products__item-5 {
+  width: 15%;
+}
+
+.products__item-5 .product-link {
+  transform: translate(0%, -130%);
+}
+
+.products__item-6 {
+  width: 18%;
+}
+
+.products__item-6 .product-link {
+  transform: translate(0%, 15%);
+}
+
+.product-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  align-content: center;
+  justify-items: center;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+.product-link__text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.product-link__icon {
+  width: 18px;
+  height: auto;
+}
+
+.product-link:hover .product-link__icon path {
+  fill: #fff;
+}
