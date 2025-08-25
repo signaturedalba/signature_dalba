@@ -221,7 +221,7 @@ const initVideoPlayer = () => {
     const control = container.querySelector(".video-player__control");
     const pauseIcon = container.querySelector(".video-player__icon--pressed");
     const playIcon = container.querySelector(
-      ".video-player__icon--not-pressed",
+      ".video-player__icon--not-pressed"
     );
 
     if (!video) {
@@ -255,12 +255,12 @@ const initVideoPlayer = () => {
       }
       container.setAttribute(
         "data-player-status",
-        state.isPlaying ? "pause" : "play",
+        state.isPlaying ? "pause" : "play"
       );
       if (hasControl) {
         control.setAttribute(
           "data-player-status",
-          state.isPlaying ? "pause" : "play",
+          state.isPlaying ? "pause" : "play"
         );
       }
     };
@@ -407,48 +407,6 @@ const initVideoPlayer = () => {
   return players;
 };
 
-const initSmoothScroll = () => {
-  const STEP_PX = window.innerHeight / 2.5; // 원하는 스텝(px)
-  const DURATION_MS = 250; // 부드러운 이동 시간
-  let isAnimating = false;
-
-  const clamp = (n, min, max) => {
-    return Math.max(min, Math.min(max, n));
-  };
-
-  const animateScroll = (start, target) => {
-    const delta = target - start;
-    const startTime = performance.now();
-
-    const tick = (now) => {
-      const t = clamp((now - startTime) / DURATION_MS, 0, 1);
-      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
-      window.scrollTo(0, start + delta * eased);
-      if (t < 1) requestAnimationFrame(tick);
-      else isAnimating = false;
-    };
-
-    requestAnimationFrame(tick);
-  };
-
-  const handleWheel = (e) => {
-    e.preventDefault(); // 브라우저 기본 스크롤 막기
-    if (isAnimating) return;
-
-    isAnimating = true;
-    const direction = e.deltaY > 0 ? 1 : -1;
-    const target = clamp(
-      window.scrollY + direction * STEP_PX,
-      0,
-      document.documentElement.scrollHeight - window.innerHeight,
-    );
-
-    animateScroll(window.scrollY, target);
-  };
-
-  window.addEventListener("wheel", handleWheel, { passive: false });
-};
-
 document.addEventListener("DOMContentLoaded", (event) => {
   // GSAP 플러그인 등록
   gsap.registerPlugin(EaselPlugin, ScrollTrigger, ScrollToPlugin);
@@ -473,5 +431,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
   initLazyLoadImages();
   initPortalTriggers();
   initVideoPlayer();
-  initSmoothScroll();
 });
