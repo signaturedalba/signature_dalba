@@ -18,6 +18,7 @@
     <script src="/public/js/gsap/EaselPlugin.min.js"></script>
     <script src="/public/js/gsap/ScrollTrigger.min.js"></script>
     <script src="/public/js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="/public/js/gsap/Draggable.min.js"></script>
     <!-- JavaScript 파일 로드 -->
     <script
       type="module"
@@ -28,12 +29,11 @@
   <body>
     <header class="header">
       <div class="header__container">
-        <h1 class="logo">
+        <h1 class="header__logo">
           <a href="/">
             <svg
               aria-hidden="true"
-              class="logo"
-              data-test="imgLogo"
+              class="header__logo-icon"
               focusable="false"
               height="28"
               width="175"
@@ -53,39 +53,65 @@
         <div class="top-bar"></div>
       </div>
       <nav class="navigation">
-        <ul class="navigation__list">
-          <li class="navigation__item">
-            <a
-              href="/"
-              class="navigation__link"
-            >N°1 de Chanel</a>
-          </li>
-          <li class="navigation__item">
-            <a
-              href="/"
-              class="navigation__link"
-            >Le nouveau sérum-en-brume</a>
-          </li>
-          <li class="navigation__item">
-
-            <a
-              href="/"
-              class="navigation__link is-active"
-            >L’ingrédient N°1 DE CHANEL</a>
-          </li>
-          <li class="navigation__item">
-            <a
-              href="/"
-              class="navigation__link"
-            >Le rituel N°1 DE CHANEL</a>
-          </li>
-          <li class="navigation__item">
-            <a
-              href="/"
-              class="navigation__link"
-            >La conviction N°1 de Chanel</a>
-          </li>
-        </ul>
+        <div class="navigation__container">
+          <div class="navigation__trigger">
+            <button
+              type="button"
+              class="navigation__trigger-button"
+            >
+              <span class="navigation__trigger-text">L’ingrédient N°1 DE CHANEL</span>
+              <span class="collapse-panel-close">
+                <svg
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                  height="8"
+                  viewBox="0 0 13 8"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="collapse-panel-close__icon"
+                >
+                  <path
+                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <ul class="navigation__list">
+            <li class="navigation__item uppercase">
+              <a
+                href="/"
+                class="navigation__link"
+              >N°1 de Chanel</a>
+            </li>
+            <li class="navigation__item uppercase">
+              <a
+                href="/"
+                class="navigation__link"
+              >Le nouveau sérum-en-brume</a>
+            </li>
+            <li class="navigation__item uppercase is-active">
+              <a
+                href="/"
+                class="navigation__link"
+              >L’ingrédient N°1 DE CHANEL</a>
+            </li>
+            <li class="navigation__item uppercase">
+              <a
+                href="/"
+                class="navigation__link"
+              >Le rituel N°1 DE CHANEL</a>
+            </li>
+            <li class="navigation__item uppercase">
+              <a
+                href="/"
+                class="navigation__link"
+              >La conviction N°1 de Chanel</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
     <main class="main-content">
@@ -94,7 +120,7 @@
           <video
             playsinline
             class="hero__video video-player__video"
-            data-src="https://cdn.dalbasignature.com/assets/video/hero.mp4"
+            src="/public/assets/video/hero.mp4"
             autoplay
             muted
             loop
@@ -185,8 +211,10 @@
         </div>
         <div class="hero__container">
           <h2 class="hero__heading">
-            <small class="hero__sub-title">L’ingrédient N°1 DE CHANEL</small>
-            <strong class="hero__main-title">Le camélia rouge, <br />source de jeunesse<br />pour la peau</strong>
+            <small class="hero__sub-title sub-title">L’ingrédient N°1 DE CHANEL</small>
+            <strong class="hero__main-title main-title uppercase">Le camélia rouge, <br />source de jeunesse<br />pour
+              la
+              peau</strong>
           </h2>
         </div>
       </section>
@@ -257,8 +285,20 @@
       <section class="parallax">
         <picture class="parallax__picture">
           <source
+            srcset="https://www.chanel.com/puls-img/c_limit,w_320/q_auto:good,f_auto,dpr_1.1/1728631886768-n1camelliascientificfeatparallaxmjpg_1480x750.jpg"
+            type="image/webp"
+            media="(max-width: 600px)"
+            height="1480"
+            width="750"
+            sizes="(min-width: 601px) 100vw, 100vw"
+          />
+          <source
             srcset="https://www.chanel.com/puls-img/1728631886637-n1camelliascientificfeatparallaxdjpg_1660x2880.jpg"
             type="image/webp"
+            media="(min-width: 601px)"
+            height="1660"
+            width="2880"
+            sizes="(min-width: 601px) 100vw, 100vw"
           />
           <img
             loading="lazy"
@@ -268,9 +308,9 @@
         </picture>
         <div class="parallax__container">
           <h2 class="parallax__heading">
-            <span class="parallax__main-title">Une prouesse<br />scientifique</span>
+            <span class="parallax__main-title main-title uppercase">Une prouesse<br />scientifique</span>
           </h2>
-          <p class="parallax__paragraph">
+          <p class="parallax__paragraph paragraph">
             19 années de recherche autour du camélia rouge<br>dans le laboratoire à ciel ouvert CHANEL de Gaujacq<br>
             ont permis de révéler ses pouvoirs de jeunesse.
           </p>
@@ -283,6 +323,10 @@
               <source
                 srcset="https://www.chanel.com/puls-img/1733148490911-n1camelliaextractionstep1djpg_1660x2880.jpg"
                 type="image/webp"
+                media="(min-width: 601px)"
+                height="1660"
+                width="2880"
+                sizes="(min-width: 601px) 100vw, 100vw"
               />
               <img
                 loading="lazy"
@@ -293,10 +337,12 @@
             <div class="horizontal-scroll__content">
 
               <h2 class="horizontal-scroll__heading">
-                <small class="horizontal-scroll__sub-title">Étape 1</small>
-                <span class="horizontal-scroll__main-title">La fragmentation <br />à froid</span>
+                <small class="horizontal-scroll__sub-title sub-title">Étape 1</small>
+                <span class="horizontal-scroll__main-title main-title uppercase">La fragmentation <br />à froid</span>
               </h2>
-              <p class="horizontal-scroll__paragraph">Les pétales de camélia rouge sont soigneusement isolés des autres
+              <p class="horizontal-scroll__paragraph paragraph">Les pétales de camélia rouge sont soigneusement isolés
+                des
+                autres
                 parties de la fleur.
               </p>
             </div>
@@ -306,6 +352,10 @@
               <source
                 srcset="https://www.chanel.com/puls-img/1733148490786-n1camelliaextractionstep2djpg_1660x2880.jpg"
                 type="image/webp"
+                media="(min-width: 601px)"
+                height="1660"
+                width="2880"
+                sizes="(min-width: 601px) 100vw, 100vw"
               />
               <img
                 loading="lazy"
@@ -315,10 +365,11 @@
             </picture>
             <div class="horizontal-scroll__content">
               <h2 class="horizontal-scroll__heading">
-                <small class="horizontal-scroll__sub-title">Étape 2</small>
-                <span class="horizontal-scroll__main-title">L’hydrofusion<br />des pétales</span>
+                <small class="horizontal-scroll__sub-title sub-title">Étape 2</small>
+                <span class="horizontal-scroll__main-title main-title uppercase">L’hydrofusion<br />des pétales</span>
               </h2>
-              <p class="horizontal-scroll__paragraph">Un procédé d’hydrofusion des pétales pour libérer leurs propriétés
+              <p class="horizontal-scroll__paragraph paragraph">Un procédé d’hydrofusion des pétales pour libérer leurs
+                propriétés
                 antioxydantes et revitalisantes.
               </p>
             </div>
@@ -328,6 +379,10 @@
               <source
                 srcset="https://www.chanel.com/puls-img/1733148490686-n1camelliaextractionstep3djpg_1660x2880.jpg"
                 type="image/webp"
+                media="(min-width: 601px)"
+                height="1660"
+                width="2880"
+                sizes="(min-width: 601px) 100vw, 100vw"
               />
               <img
                 loading="lazy"
@@ -337,47 +392,83 @@
             </picture>
             <div class="horizontal-scroll__content">
               <h2 class="horizontal-scroll__heading">
-                <small class="horizontal-scroll__sub-title">Étape 3</small>
-                <span class="horizontal-scroll__main-title">La purification<br />des pétales</span>
+                <small class="horizontal-scroll__sub-title sub-title">Étape 3</small>
+                <span class="horizontal-scroll__main-title main-title uppercase">La purification<br />des pétales</span>
               </h2>
-              <p class="horizontal-scroll__paragraph">L’étape de purification permet de filtrer la solution pour ne
+              <p class="horizontal-scroll__paragraph paragraph">L’étape de purification permet de filtrer la solution
+                pour ne
                 conserver que son essence : l’extrait de camélia rouge.
               </p>
             </div>
           </li>
         </ul>
         <div class="video-modal-preview">
-          <div class="video-player">
-            <video
-              playsinline
-              class="video-modal-preview__video video-player__video"
-              data-src="https://cdn.dalbasignature.com/assets/video/video-modal-preview.mp4"
-              autoplay
-              muted
-              loop
-            ></video>
-          </div>
-          <button
-            data-trigger="video-modal"
-            class="video-modal-preview__control portal-trigger"
-          >
-            <svg
-              class="video-modal-preview__icon"
-              viewBox="0 0 11 12"
-              aria-hidden="true"
-              focusable="false"
+          <div class="video-modal-preview__mobile-container">
+            <!-- Mobile -->
+            <button
+              type="button"
+              data-trigger="video-modal"
+              class="video-modal-mobile-trigger portal-trigger"
             >
-              <path d="m10.5 6-10 6v-12z"></path>
-            </svg>
-            Voir le film
-          </button>
+              <span class="video-modal-mobile-trigger__icon-box">
+                <svg
+                  class="video-modal-mobile-trigger__icon"
+                  viewBox="0 0 11 12"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path d="m10.5 6-10 6v-12z"></path>
+                </svg>
+              </span>
+              <span class="video-modal-mobile-trigger__text">Voir le film</span>
+            </button>
+          </div>
+          <!-- PC -->
+          <div class="video-modal-preview__pc-container">
+            <div class="video-player">
+              <video
+                playsinline
+                class="video-modal-preview__video video-player__video"
+                src="/public/assets/video/video-modal-preview.mp4"
+                autoplay
+                muted
+                loop
+              ></video>
+            </div>
+            <button
+              data-trigger="video-modal"
+              class="video-modal-pc-trigger uppercase portal-trigger"
+            >
+              <svg
+                class="video-modal-pc-trigger__icon"
+                viewBox="0 0 11 12"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="m10.5 6-10 6v-12z"></path>
+              </svg>
+              <span class="video-modal-pc-trigger__text uppercase">Voir le film</span>
+            </button>
+          </div>
       </section>
       <section class="extension">
         <div class="extension__container">
           <picture class="extension__picture">
             <source
+              srcset="https://www.chanel.com/puls-img/c_limit,w_960/q_auto:good,f_auto,dpr_1.1/1733148799726-n1camelliaflowerextractionparallaxmjpg_1778x750.jpg"
+              type="image/webp"
+              media="(max-width: 600px)"
+              8height="1779"
+              width="750"
+              sizes="(min-width: 601px) 100vw, 100vw"
+            />
+            <source
               srcset="https://www.chanel.com/puls-img/1733148801616-n1camelliaflowerextractionparallaxdjpg_3110x2880.jpg"
               type="image/webp"
+              media="(min-width: 601px)"
+              height="3110"
+              width="2880"
+              sizes="(min-width: 601px) 100vw, 100vw"
             />
             <img
               loading="lazy"
@@ -387,21 +478,24 @@
           </picture>
           <div class="extension__content">
             <h2 class="extension__heading">
-              <span class="extension__main-title">La jeunesse <br />est une science</span>
+              <span class="extension__main-title uppercase">La jeunesse <br />est une science</span>
             </h2>
-            <p class="extension__paragraph">Sélectionné par la Recherche de CHANEL, l’extrait de camélia rouge <br />est
-              un puissant actif qui agit au cœur de la peau.</p>
+            <p class="extension__paragraph paragraph">Sélectionné par la Recherche de CHANEL, l’extrait de camélia rouge
+              est
+              un puissant actif qui agit au cœur de la peau.
+            </p>
           </div>
         </div>
       </section>
       <section class="slide-up-text">
-        <div class="slide-up-text__container">
+        <div class="slide-up-text__container wrapper">
           <div class="slide-up-text__content">
             <h2 class="slide-up-text__heading">
-              <small class="slide-up-text__sub-title">Jour après jour</small>
-              <span class="slide-up-text__main-title">La peau est<br />éclatante de<br />jeunesse</span>
+              <small class="slide-up-text__sub-title uppercase">Jour après jour</small>
+              <span class="slide-up-text__main-title uppercase">La peau est<br />éclatante
+                de<br />jeunesse</span>
             </h2>
-            <p class="slide-up-text__paragraph">
+            <p class="slide-up-text__paragraph paragraph">
               La ligne N°1 DE CHANEL agit instantanément sur les signes de jeunesse de la peau : les rides,
               l’élasticité,
               les pores et
@@ -409,13 +503,36 @@
               jeunesse.
             </p>
           </div>
-          <p class="slide-up-text__effect">
-            Stimule la vitalité de la peau
-          </p>
-          <p class="slide-up-text__accent">63%<sup class="slide-up-text__accent-sup">**</sup></p>
+          <div class="slide-up-text__appear">
+            <p class="slide-up-text__effect uppercase">
+              Stimule la vitalité de la peau
+            </p>
+            <p class="slide-up-text__accent uppercase">63%<sup class="slide-up-text__accent-sup uppercase">**</sup></p>
+          </div>
         </div>
       </section>
       <section class="carousel  ">
+        <button
+          type="button"
+          class="carousel__control carousel__control--prev"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="34"
+            viewBox="0 0 20 34"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M2.05517 33.7396L0.333294 31.9271L16.046 17L0.333297 2.07291L2.05517 0.260413L19.6758 17L2.05517 33.7396Z"
+              fill="#000"
+            ></path>
+          </svg>
+        </button>
         <div class="carousel__container">
           <ul class="carousel__list">
             <li class="carousel__item carousel__item--video">
@@ -423,7 +540,7 @@
                 <video
                   playsinline
                   class="carousel__video video-player__video"
-                  data-src="https://cdn.dalbasignature.com/assets/video/carousel3.mp4"
+                  src="/public/assets/video/carousel3.mp4"
                   loop
                 ></video>
                 <button
@@ -527,7 +644,7 @@
                 <video
                   playsinline
                   class="carousel__video video-player__video"
-                  data-src="https://cdn.dalbasignature.com/assets/video/carousel2.mp4"
+                  src="/public/assets/video/carousel2.mp4"
                   loop
                 ></video><button
                   type="button"
@@ -630,7 +747,7 @@
                 <video
                   playsinline
                   class="carousel__video video-player__video"
-                  data-src="https://cdn.dalbasignature.com/assets/video/carousel1.mp4"
+                  src="/public/assets/video/carousel1.mp4"
                   loop
                 ></video><button
                   type="button"
@@ -716,24 +833,44 @@
               </div>
             </li>
           </ul>
-        </div>
+        </div><button
+          type="button"
+          class="carousel__control carousel__control--next"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="34"
+            viewBox="0 0 20 34"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M2.05517 33.7396L0.333294 31.9271L16.046 17L0.333297 2.07291L2.05517 0.260413L19.6758 17L2.05517 33.7396Z"
+              fill="#000"
+            ></path>
+          </svg>
+        </button>
       </section>
     </main>
     <div class="discover">
       <div class="discover__container">
         <h2 class="discover__heading">
-          <span class="discover__main-title">
+          <span class="discover__main-title main-title uppercase">
             Les rituels <br />
             N°1 de Chanel
           </span><a
             href="#"
-            class="discover__link link-trigger"
+            class="discover__link uppercase link-trigger"
           >
             <span>Voir tout</span>
           </a>
         </h2>
         <div class="products">
-          <div class="products__container">
+          <div class="products__container wrapper">
             <ul class="products__list">
               <li class="products__item products__item-1">
                 <picture class="products__picture">
@@ -843,7 +980,7 @@
               <li class="products__item products__item-4">
                 <picture class="products__picture">
                   <source
-                    srcset="https://www.chanel.com/puls-img/1746455568778-sebpng_1080x752.png"
+                    srcset="https://www.chanel.com/puls-img/1733759338612-n1targetcremepng_268x414.png"
                     type="image/webp"
                   />
                   <img
@@ -856,9 +993,6 @@
                   href="#"
                   class="product-link link-trigger"
                 >
-                  <span class="product-link__text">
-                    NOUVEAU
-                  </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="21"
@@ -881,7 +1015,7 @@
               <li class="products__item products__item-5">
                 <picture class="products__picture">
                   <source
-                    srcset="https://www.chanel.com/puls-img/1733759338612-n1targetcremepng_268x414.png"
+                    srcset="https://www.chanel.com/puls-img/1746455568778-sebpng_1080x752.png"
                     type="image/webp"
                   />
                   <img
@@ -894,6 +1028,9 @@
                   href="#"
                   class="product-link link-trigger"
                 >
+                  <span class="product-link__text uppercase">
+                    NOUVEAU
+                  </span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="21"
@@ -953,23 +1090,43 @@
         </div>
       </div>
     </div>
-    <div class="banner">
-      <div class="mention">
-        <ul class="mention__list">
-          <li class="mention__item">* Camellia Japonica.</li>
-          <li class="mention__item">
-            ** Test d’activité enzymatique sur un modèle de peau reconstruite in vitro traité avec l’extrait de camélia
-            rouge.
-          </li>
-        </ul>
-      </div>
-      <div class="sub-footer">
-        <div class="sub-footer__container">
-          <ul class="sub-footer__list">
-            <li class="sub-footer__item">
-              <p class="sub-footer__title">
-                <strong>CONTACTER UN CONSEILLER</strong>
-              </p>
+    <div class="mention">
+      <ul class="mention__list">
+        <li class="mention__item">* Camellia Japonica.</li>
+        <li class="mention__item">
+          ** Test d’activité enzymatique sur un modèle de peau reconstruite in vitro traité avec l’extrait de camélia
+          rouge.
+        </li>
+      </ul>
+    </div>
+    <div class="sub-footer">
+      <div class="sub-footer__container wrapper">
+        <ul class="sub-footer__list">
+          <li class="sub-footer__item">
+            <button
+              class="sub-footer__title uppercase"
+              type="button"
+            >
+              <strong>CONTACTER UN CONSEILLER</strong>
+              <span class="collapse-panel-close">
+                <svg
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                  height="8"
+                  viewBox="0 0 13 8"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="collapse-panel-close__icon"
+                >
+                  <path
+                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <div class="sub-footer__content">
               <p class="sub-footer__paragraph">
                 Les conseillers CHANEL sont à votre disposition pour toute information du lundi au samedi, de 10h00 à
                 19h00.<br>
@@ -986,29 +1143,71 @@
                   class="sub-footer__link"
                 >+33975181509</a>.
               </p>
-            </li>
-            <li class="sub-footer__item">
-              <p class="sub-footer__title">
-                <strong>Trouver une boutique rouge.</strong>
-              </p>
+            </div>
+          </li>
+          <li class="sub-footer__item">
+            <button
+              class="sub-footer__title uppercase"
+              type="button"
+            >
+              <strong>Trouver une boutique rouge.</strong>
+              <span class="collapse-panel-close"><svg
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                  height="8"
+                  viewBox="0 0 13 8"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="collapse-panel-close__icon"
+                >
+                  <path
+                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <div class="sub-footer__content">
               <p class="sub-footer__paragraph">
                 Saisissez un lieu pour trouver les boutiques CHANEL les plus proches
               </p>
-            </li>
-            <li class="sub-footer__item">
-              <p class="sub-footer__title">
-                <strong>NEWSLETTER</strong>
-              </p>
+            </div>
+          </li>
+          <li class="sub-footer__item">
+            <button
+              class="sub-footer__title uppercase"
+              type="button"
+            >
+              <strong>NEWSLETTER</strong>
+              <span class="collapse-panel-close"><svg
+                  fill="none"
+                  aria-hidden="true"
+                  focusable="false"
+                  height="8"
+                  viewBox="0 0 13 8"
+                  width="13"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="collapse-panel-close__icon"
+                >
+                  <path
+                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </span>
+            </button>
+            <div class="sub-footer__content">
               <p class="sub-footer__paragraph">
                 Abonnez-vous pour suivre toute l’actualité de la Maison CHANEL
               </p>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     <nav class="breadcrumb">
-      <div class="breadcrumb__container">
+      <div class="breadcrumb__container wrapper">
         <ul class="breadcrumb__list">
           <li class="breadcrumb__item">
             <a
@@ -1064,11 +1263,11 @@
             </svg>
           </a>
         </h2>
-        <div class="footer__body">
+        <div class="footer__body wrapper">
 
           <div class="sitemap">
             <div class="sitemap__article">
-              <p class="sitemap__title">
+              <p class="sitemap__title uppercase">
                 <strong>Explorer CHANEL.com</strong>
               </p>
               <ul class="sitemap__list">
@@ -1135,7 +1334,7 @@
               </ul>
             </div>
             <div class="sitemap__article">
-              <p class="sitemap__title">
+              <p class="sitemap__title uppercase">
                 <strong>
                   Services en ligne
                 </strong>
@@ -1179,7 +1378,7 @@
                 </li>
             </div>
             <div class="sitemap__article">
-              <p class="sitemap__title">
+              <p class="sitemap__title uppercase">
                 <strong>
                   Services en boutique
                 </strong>
@@ -1200,7 +1399,7 @@
               </ul>
             </div>
             <div class="sitemap__article">
-              <p class="sitemap__title">
+              <p class="sitemap__title uppercase">
                 <strong>
                   La Maison CHANEL
                 </strong>
@@ -1267,7 +1466,10 @@
             <div class="change-language">
               <span class="change-language__label">Change location and language
               </span>
-              <button class="change-language__button">
+              <button
+                type="button"
+                class="change-language__button"
+              >
                 <span class="change-language__button-text">
                   France - Français
                 </span>
@@ -1432,12 +1634,15 @@
           <video
             playsinline
             class="video-modal__video"
-            data-src="https://cdn.dalbasignature.com/assets/video/video-modal.mp4"
+            src="/public/assets/video/video-modal.mp4"
             loop
             controls
           ></video>
         </div>
-        <button class="portal__close"></button>
+        <button
+          type="button"
+          class="portal__close"
+        ></button>
       </div>
     </div>
   </body>

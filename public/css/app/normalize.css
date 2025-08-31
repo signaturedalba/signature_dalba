@@ -24,17 +24,17 @@ html:focus-within {
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  font-size: 15px;
 }
 
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  line-height: 1.5;
+  line-height: var(--lh-base);
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
-  font-family: abchanel-corpo, Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans-secondary);
 }
 
 /* A elements that don't have a class get default styles */
@@ -100,6 +100,10 @@ button {
   border: none;
   background: none;
 }
+button:disabled {
+  cursor: inherit;
+  color: inherit;
+}
 
 /* Remove default input styles */
 input,
@@ -141,5 +145,12 @@ sup {
 }
 
 h2 {
+  font-family: var(--font-brand);
   text-transform: uppercase;
+}
+
+@media (min-width: 601px) {
+  html {
+    font-size: 16px;
+  }
 }

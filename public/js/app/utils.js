@@ -1,21 +1,4 @@
-// 유틸리티 함수들
 export const utils = {
-  // DOM 요소 선택
-  $(selector) {
-    return document.querySelector(selector);
-  },
-
-  // 모든 DOM 요소 선택
-  $$(selector) {
-    return document.querySelectorAll(selector);
-  },
-
-  // 이벤트 리스너 추가
-  on(element, event, handler) {
-    element.addEventListener(event, handler);
-  },
-
-  // 로컬 스토리지 관리
   storage: {
     get(key) {
       try {
@@ -32,7 +15,6 @@ export const utils = {
     },
   },
 
-  // 디바운스 함수
   debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -45,7 +27,6 @@ export const utils = {
     };
   },
 
-  // 스로틀 함수
   throttle(func, limit) {
     let inThrottle;
     return function () {
@@ -57,5 +38,94 @@ export const utils = {
         setTimeout(() => (inThrottle = false), limit);
       }
     };
+  },
+
+  addClassname(selector, className) {
+    const element = document.querySelector(`${selector}`);
+    if (element) element.classList.add(className);
+  },
+
+  disposeInstance(instance) {
+    if (instance && typeof instance.kill === "function") instance.kill();
+    return null;
+  },
+
+  setAttribute(el, name, value) {
+    if (!el) return;
+    if (value === null || value === undefined) el.removeAttribute(name);
+    else el.setAttribute(name, value);
+  },
+
+  setAttributes(el, attrs) {
+    if (!el || !attrs) return;
+    for (const [key, val] of Object.entries(attrs)) {
+      if (val === null || val === undefined) el.removeAttribute(key);
+      else el.setAttribute(key, val);
+    }
+  },
+
+  addEventListenerOnce(el, type, handler) {
+    const fn = (e) => {
+      el.removeEventListener(type, fn);
+      handler(e);
+    };
+    el.addEventListener(type, fn);
+  },
+
+  playVideoSafely(video) {
+    try {
+      const p = video.play();
+      if (p && typeof p.then === "function") {
+        p.catch(() => {
+          video.muted = true;
+          video.play().catch(() => {});
+        });
+      }
+    } catch (_) {}
+  },
+
+  getCurrentBreakpoint() {
+    const mediaQueries = {
+      lg: window.matchMedia("(min-width: 1201px)"),
+      md: window.matchMedia("(min-width: 961px)"),
+      sm: window.matchMedia("(min-width: 601px)"),
+    };
+
+    if (mediaQueries.lg.matches) return "lg";
+    if (mediaQueries.md.matches) return "md";
+    if (mediaQueries.sm.matches) return "sm";
+    return "xs";
+  },
+
+  onBreakpointChange({ onXs, onSm, onMd, onLg }) {
+    let currentMatchMediaQuery = null;
+
+    const handleResize = () => {
+      const matchMediaQuery = this.getCurrentBreakpoint();
+
+      if (matchMediaQuery === currentMatchMediaQuery) return;
+
+      currentMatchMediaQuery = matchMediaQuery;
+
+      switch (matchMediaQuery) {
+        case "lg":
+          onLg && onLg();
+          break;
+        case "md":
+          onMd && onMd();
+          break;
+        case "sm":
+          onSm && onSm();
+          break;
+        case "xs":
+          onXs && onXs();
+          break;
+          break;
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", this.debounce(handleResize, 400));
   },
 };
