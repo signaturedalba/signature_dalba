@@ -44,12 +44,11 @@
   -webkit-transition: -webkit-transform var(--duration-300) var(--ease-in-out);
   transition: -webkit-transform var(--duration-300) var(--ease-in-out);
   transition: transform var(--duration-300) var(--ease-in-out);
-  transition: transform var(--duration-300) var(--ease-in-out), -webkit-transform var(--duration-300) var(--ease-in-out);
-  transition:
-    transform var(--duration-300) var(--ease-in-out),
+  transition: transform var(--duration-300) var(--ease-in-out),
     -webkit-transform var(--duration-300) var(--ease-in-out);
-  transition:
-    transform var(--duration-300) var(--ease-in-out),
+  transition: transform var(--duration-300) var(--ease-in-out),
+    -webkit-transform var(--duration-300) var(--ease-in-out);
+  transition: transform var(--duration-300) var(--ease-in-out),
     -webkit-transform var(--duration-300) var(--ease-in-out);
 }
 

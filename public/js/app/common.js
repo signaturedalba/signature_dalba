@@ -25,7 +25,7 @@ const attachPortalModalHandlers = () => {
         }
 
         utils.addEventListenerOnce(videoElement, "canplay", () =>
-          utils.playVideoSafely(videoElement),
+          utils.playVideoSafely(videoElement)
         );
         try {
           videoElement.load();
@@ -153,19 +153,19 @@ const setupAccessibleVideoPlayers = () => {
   containers.forEach((playerElement) => {
     const videoElement = playerElement.querySelector(".video-player__video");
     const controlElement = playerElement.querySelector(
-      ".video-player__control",
+      ".video-player__control"
     );
     const iconPause = playerElement.querySelector(
-      ".video-player__icon--pressed",
+      ".video-player__icon--pressed"
     );
     const iconPlay = playerElement.querySelector(
-      ".video-player__icon--not-pressed",
+      ".video-player__icon--not-pressed"
     );
 
     if (!videoElement) {
       console.warn(
         "VideoPlayer: .video-player__video not found",
-        playerElement,
+        playerElement
       );
       return;
     }
@@ -320,7 +320,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "resize",
     utils.debounce(() => {
       ScrollTrigger.refresh();
-    }, 400),
+    }, 400)
+  );
+
+  document.documentElement.style.setProperty(
+    "--vh",
+    `${window.innerHeight * 0.01}px`
   );
 
   enableImageLazyLoading();

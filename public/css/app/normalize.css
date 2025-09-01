@@ -30,7 +30,6 @@ html {
 
 /* Set core body defaults */
 body {
-  min-height: 100svh;
   line-height: var(--lh-base);
   font-family: var(--font-sans-secondary);
 }
@@ -115,7 +114,7 @@ template {
 
 /* Remove default hidden styles */
 [hidden] {
-  display: none !important;
+  display: none;
 }
 
 sup {
