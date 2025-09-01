@@ -90,7 +90,7 @@ const enableImageLazyLoading = () => {
 
   const observer = new IntersectionObserver(onIntersect, {
     root: null,
-    rootMargin: `${window.innerWidth}px 0px`,
+    rootMargin: `${window.innerHeight}px 0px`,
     threshold: 0.01,
   });
 
@@ -139,7 +139,7 @@ const enableVideoLazyLoading = () => {
 
   const observer = new IntersectionObserver(onIntersect, {
     root: null,
-    rootMargin: `${window.innerWidth}px 0px`,
+    rootMargin: `${window.innerHeight}px 0px`,
     threshold: 0.01,
   });
 

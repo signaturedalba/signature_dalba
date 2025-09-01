@@ -1,6 +1,7 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -18,7 +19,7 @@ ol {
 
 /* Set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 html {
@@ -29,7 +30,7 @@ html {
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  min-height: 100svh;
   line-height: var(--lh-base);
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
@@ -44,6 +45,7 @@ a {
 }
 
 a:not([class]) {
+  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
 }
 
@@ -75,8 +77,11 @@ select {
   *,
   *::before,
   *::after {
+    -webkit-animation-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -96,6 +101,7 @@ fieldset {
 
 /* Remove default button styles */
 button {
+  color: inherit;
   cursor: pointer;
   border: none;
   background: none;
