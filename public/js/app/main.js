@@ -16,7 +16,7 @@ const initHeroTitleReveal = () => {
     .to(
       ".hero__main-title",
       { y: 0, opacity: 1, duration: 1, ease: EASE_OUT },
-      "-=0.7",
+      "-=0.7"
     );
 };
 
@@ -110,7 +110,7 @@ const initHorizontalSectionsReveal = () => {
     timeline.to(
       itemElement,
       { clipPath: "inset(0 100% 0 0)", ease: "power2.inOut" },
-      at,
+      at
     );
     if (contentElement) {
       timeline.to(contentElement, { x: "-150%", ease: "power2.inOut" }, at);
@@ -162,7 +162,7 @@ const initSlideUpTextReveal = () => {
       duration: 1,
       ease: "power2.out",
     },
-    "-=0.7",
+    "-=0.7"
   );
 
   ScrollTrigger.create({
@@ -179,7 +179,7 @@ const initSlideUpTextReveal = () => {
 
 const initCarouselScrollAndControls = () => {
   const carouselElement = document.querySelector(".carousel");
-  const containerElement = document.querySelector(".carousel__container");
+  const draggableElement = document.querySelector(".carousel__draggable");
   const listElement = document.querySelector(".carousel__list");
   const lastItemElement = document.querySelector(".carousel__item:last-child");
   const prevButtonElement = document.querySelector(".carousel__control--prev");
@@ -314,6 +314,13 @@ const initCarouselScrollAndControls = () => {
     });
   };
 
+  const computeCarouselMaxDragDistance = () => {
+    // 리스트의 전체 너비에서 뷰포트 너비를 뺀 값이 최대 드래그 거리
+    const listTotalWidth = listElement.scrollWidth;
+    const viewportWidth = window.innerWidth;
+    return Math.max(0, listTotalWidth - viewportWidth);
+  };
+
   const enableCarouselDragForXS = () => {
     tween = utils.disposeInstance(tween);
     combinedST = utils.disposeInstance(combinedST);
@@ -321,7 +328,7 @@ const initCarouselScrollAndControls = () => {
     gsap.set(carouselElement, { clearProps: "all" });
     gsap.set(listElement, { clearProps: "all" });
 
-    const maxDragDistance = Math.abs(computeCarouselEndOffsetX());
+    const maxDragDistance = computeCarouselMaxDragDistance();
 
     const draggableInstance = Draggable.create(listElement, {
       type: "x",
@@ -415,14 +422,14 @@ const initCarouselScrollAndControls = () => {
   };
 
   const enableCarouselScrollAnimationForSMAndUp = () => {
-    Draggable.get(containerElement)?.kill();
+    Draggable.get(draggableElement)?.kill();
 
     const toX = computeCarouselEndOffsetX();
 
     tween = gsap.fromTo(
       listElement,
       { x: 0 },
-      { x: toX, ease: "linear", duration: 0.05, paused: true },
+      { x: toX, ease: "linear", duration: 0.05, paused: true }
     );
 
     combinedST = ScrollTrigger.create({
@@ -445,7 +452,7 @@ const initCarouselScrollAndControls = () => {
     "resize",
     utils.debounce(() => {
       initializeCarouselScrollTriggers();
-    }, 400),
+    }, 400)
   );
 
   utils.onBreakpointChange({

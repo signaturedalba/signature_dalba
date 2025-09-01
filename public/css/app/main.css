@@ -149,7 +149,6 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: transform;
-  contain: paint;
   background: var(--color-gray-300);
   height: 100vh;
   /* height: calc(var(--vh, 1vh) * 100); */
@@ -590,7 +589,7 @@
 .carousel__item {
   -ms-flex-negative: 0;
   flex-shrink: 0;
-  height: 41.875rem;
+  height: auto;
 }
 
 .carousel__item--video {
@@ -627,7 +626,7 @@
   transform: translateY(-50%);
   z-index: 10;
   padding: 0 0.9375rem;
-  height: 41.875rem;
+  height: 100%;
 }
 
 .carousel__control--prev {
@@ -939,6 +938,10 @@
   }
   .slide-up-text__effect {
     max-width: none;
+  }
+
+  .carousel__item {
+    height: 41.875rem;
   }
 
   .carousel__item--video {

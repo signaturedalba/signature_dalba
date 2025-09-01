@@ -248,6 +248,13 @@ const setupAccessibleVideoPlayers = () => {
 
     videoElement.addEventListener("click", () => toggle());
 
+    const showVideo = () => {
+      utils.setAttributes(playerElement, { "data-player-visible": "true" });
+    };
+
+    videoElement.addEventListener("loadeddata", showVideo, { once: true });
+    videoElement.addEventListener("canplay", showVideo, { once: true });
+
     videoElement.addEventListener("play", () => {
       state.isPlaying = true;
       applyStatus();
