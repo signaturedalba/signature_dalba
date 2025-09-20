@@ -45,6 +45,11 @@ export const utils = {
     if (element) element.classList.add(className);
   },
 
+  removeClassname(selector, className) {
+    const element = document.querySelector(`${selector}`);
+    if (element) element.classList.remove(className);
+  },
+
   disposeInstance(instance) {
     if (instance && typeof instance.kill === "function") instance.kill();
     return null;

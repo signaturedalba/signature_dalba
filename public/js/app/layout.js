@@ -122,7 +122,7 @@ const initFooterFadeAnimations = () => {
     scrollTrigger = ScrollTrigger.create({
       trigger: ".breadcrumb",
       start: "bottom bottom",
-      end: () => `top ${footerElement ? footerElement.clientHeight : 0}px`,
+      end: "top 30%",
       invalidateOnRefresh: true,
       scrub: true,
       onUpdate: (self) => {
@@ -150,7 +150,7 @@ const initFooterFadeAnimations = () => {
     scrollTrigger = ScrollTrigger.create({
       trigger: ".breadcrumb",
       start: "bottom bottom",
-      end: () => `top ${footerElement ? footerElement.offsetTop : 0}px`,
+      end: () => `top ${footerElement.offsetTop}px`,
       invalidateOnRefresh: true,
       scrub: true,
       onUpdate: (self) => {

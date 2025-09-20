@@ -102,7 +102,7 @@
 .product__list--2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 35px 15px;
+  gap: 35px 10px;
 }
 
 @media (min-width: 601px) {
@@ -151,10 +151,13 @@
   }
 }
 
-@media (min-width: 961px) {
+@media (min-width: 1201px) {
+  .product__list--1 {
+    gap: 20px;
+  }
   .product__list--2 {
     display: flex;
-    gap: 25px;
+    gap: 20px;
   }
 }
 
