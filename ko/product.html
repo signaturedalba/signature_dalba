@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>PRODUCT | D'Alba Signature</title>
+    <!-- CSS 파일 로드 -->
+    <link
+      rel="stylesheet"
+      href="/public/css/app/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/public/css/app/product.css"
+    />
+    <script src="/public/js/gsap/gsap.min.js"></script>
+    <script src="/public/js/gsap/EaselPlugin.min.js"></script>
+    <script src="/public/js/gsap/ScrollTrigger.min.js"></script>
+    <script src="/public/js/gsap/ScrollToPlugin.min.js"></script>
+    <script src="/public/js/gsap/Draggable.min.js"></script>
+    <script
+      type="module"
+      src="/public/js/app/common.js"
+    ></script>
+
+  </head>
+
+  <body class="font-kr">
+    <header class="header font-en-title">
+      <div class="header__container">
+        <h1 class="header__logo">
+          <a "
+            href=" /ko/product.html">
+            <img
+              class="header__logo-icon"
+              src="https://cdn.dalbasignature.com/assets/dalba-signature-logo-w.png"
+              alt=""
+            />
+          </a>
+        </h1>
+        <nav class="navigation font-en-title">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a "
+                href="
+                /ko"
+                class="navigation__link"
+              >HOME</a>
+            </li>
+            <li class="navigation__item">
+              <a "
+                href="
+                /ko/product.html"
+                class="navigation__link"
+              >PRODUCT</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="language-selector">
+          <ul class="language-selector__list">
+            <li class="language-selector__item">
+              <a "
+                href="
+                /ko/product.html"
+                class="language-selector__link"
+              >KR</a>
+            </li>
+            <li class="language-selector__item">
+              <a "
+                href="
+                /en/product.html"
+                class="language-selector__link"
+              >EN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="header__trigger"
+      >
+        <span class="header__trigger-icon header__trigger-icon--1"></span>
+        <span class="header__trigger-icon header__trigger-icon--2"></span>
+        <span class="header__trigger-icon header__trigger-icon--3"></span>
+      </button>
+    </header>
+    <main class="product-content">
+      <section class="hero">
+        <div class="hero__container">
+          <picture class="hero__picture">
+            <source
+              srcset="https://cdn.dalbasignature.com/assets/PRODUCT/PRODUCT-SECTION1-MO.png"
+              type="image/png"
+              media="(max-width: 600px)"
+              height="402"
+              width="874"
+              sizes="(max-width: 600px) 100vw, 100vw"
+            />
+            <source
+              srcset="https://cdn.dalbasignature.com/assets/PRODUCT/PRODUCT-SECTION1-PC.png"
+              type="image/png"
+              media="(min-width: 601px)"
+              height="1920"
+              width="1080"
+              sizes="(min-width: 601px) 100vw, 100vw"
+            />
+            <img
+              loading="lazy"
+              class="hero__image"
+              alt="hero-image"
+            />
+          </picture>
+          <div class="hero__content wrapper">
+            <h2 class="hero__heading font-en-title">
+              <small class="hero__sub-title sub-title font-en-title"> Signature </small>
+              <span class="hero__main-title main-title">
+                6-Step<br />
+                Elastic Skin Care<br />
+                Routine
+              </span>
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section class="product">
+        <div class="product__container wrapper">
+          <h2 hidden>Product</h2>
+          <ul class="product__list product__list--1">
+            <li class="product__item product__item--1">
+              <a
+                target="_blank"
+                href=""
+              >
+                <picture class="product__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/PRODUCT/toner.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="product__image"
+                    alt="product-image"
+                  />
+                </picture>
+                <p class="product__name">달바 시그니처 화이트트러플 90%<br class="hide-sm" /> 안티에이징 트리트먼트 에센스</p>
+                <ul class="product__info">
+                  <li class="product__info-item">160ml</li>
+                  <li class="product__info-item">100,000원</li>
+                </ul>
+              </a>
+            </li>
+            <li class="product__item product__item--1">
+              <a
+                target="_blank"
+                href=""
+              >
+                <picture class="product__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/PRODUCT/liposome-ampoule.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="product__image"
+                    alt="product-image"
+                  />
+                </picture>
+                <p class="product__name">달바 시그니처 안티에이징 PDRN 리포좀 40% 앰플</p>
+                <ul class="product__info">
+                  <li class="product__info-item">50ml</li>
+                  <li class="product__info-item">100,000원</li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="banner">
+        <div class="banner__container">
+          <picture class="banner__picture">
+            <source
+              srcset="https://cdn.dalbasignature.com/assets/PRODUCT/PRODUCT-SECTION3-MO.png"
+              type="image/png"
+              media="(max-width: 600px)"
+              height="402"
+              width="874"
+              sizes="(max-width: 600px) 100vw, 100vw"
+            />
+            <source
+              srcset="https://cdn.dalbasignature.com/assets/PRODUCT/PRODUCT-SECTION3-PC.png"
+              type="image/png"
+              media="(min-width: 601px)"
+              height="1920"
+              width="1080"
+              sizes="(min-width: 601px) 100vw, 100vw"
+            />
+            <img
+              loading="lazy"
+              class="banner__image"
+              alt="banner-image"
+            />
+          </picture>
+          <div class="banner__content wrapper">
+            <h2 class="banner__heading font-en-title">
+              <span class="banner__main-title main-title">
+                SIGNATURE<br />
+                ALL-TERA <br class="hide-sm" />DOUBLE SHOT
+              </span>
+            </h2>
+            <p class="banner__paragraph show-sm hide-xs">달바 시그니처 안티에이징 PDRN 리포좀 40% 앰플</p>
+            <p class="banner__paragraph show-xs hide-sm">시그니처 올쎄라 더블샷</p>
+          </div>
+        </div>
+      </section>
+      <section class="product ">
+        <div class="product__container wrapper">
+          <h2 hidden>Product</h2>
+          <ul class="product__list product__list--2">
+            <li class="product__item product__item--2">
+              <a
+                target="_blank"
+                href=""
+              >
+                <picture class="product__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/PRODUCT/anti-aging-spray.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="product__image"
+                    alt="product-image"
+                  />
+                </picture>
+                <p class="product__name">달바 시그니처 안티에이징<br class="hide-sm" /> 스프레이 앰플 12%</p>
+                <ul class="product__info">
+                  <li class="product__info-item">80ml</li>
+                  <li class="product__info-item">100,000원</li>
+                </ul>
+              </a>
+            </li>
+            <li class="product__item">
+              <a
+                target="_blank"
+                href=""
+              >
+                <picture class="product__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/PRODUCT/double-ampoule.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="product__image"
+                    alt="product-image"
+                  />
+                </picture>
+                <p class="product__name">달바 시그니처 안티에이징<br class="hide-sm" /> 더블 리프팅 앰플</p>
+                <ul class="product__info">
+                  <li class="product__info-item">80ml</li>
+                  <li class="product__info-item">100,000원</li>
+                </ul>
+              </a>
+            </li>
+            <li class="product__item">
+              <a
+                target="_blank"
+                href=""
+              >
+                <picture class="product__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/PRODUCT/deep-cleansing-balm.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="product__image"
+                    alt="product-image"
+                  />
+                </picture>
+                <p class="product__name">달바 시그니처 딥 클렌징 밤</p>
+                <ul class="product__info">
+                  <li class="product__info-item">80ml</li>
+                  <li class="product__info-item">100,000원</li>
+                </ul>
+              </a>
+            </li>
+            <li class="product__item">
+              <a
+                target="_blank"
+                href=""
+              >
+                <picture class="product__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/PRODUCT/allthera-double-shot.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="product__image"
+                    alt="product-image"
+                  />
+                </picture>
+                <p class="product__name">달바 시그니처 올쎄라 더블샷</p>
+                <ul class="product__info">
+                  <li class="product__info-item">80ml</li>
+                  <li class="product__info-item">100,000원</li>
+                </ul>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <div class="breadcrumb"></div>
+    <footer class="footer">
+      <div class="footer__container">
+        <h2 class="footer__heading">
+          <a
+            target="_blank"
+            href="#"
+          >
+            <img
+              class="footer__logo"
+              src="https://cdn.dalbasignature.com/assets/dalba-signature-logo.png"
+              alt=""
+            />
+          </a>
+        </h2>
+        <div class="footer__body">
+          <article class="information footer-content">
+            <h3 class="footer-content__title">주식회사 달바글로벌</h3>
+            <p class="information__paragraph footer-content__paragraph">
+              서울특별시 마포구 마포대로 78, 12층 (도화동, 자람빌딩) (04031)<br />
+              CEO : 반성연<br />
+              Hosting by NHN Commerce<br />
+              Tel : 02-332-7727<br />
+              Information manager 유명한
+            </p>
+            <p class="information__paragraph footer-content__paragraph">
+              Business Registeration No. 840-88-00333.<br />
+              Online Sales Reg No. 제 2016-서울마포-0721호<br />
+              © d'alba GLOBAL.
+            </p>
+          </article>
+          <article class="contact footer-content">
+            <h3 class="contact__title footer-content__title">Contact</h3>
+            <ul class="contact__list">
+              <li class="contact__item">
+                <button
+                  class="contact__list-title"
+                  type="button"
+                >
+                  <strong>비즈니스 문의</strong>
+                  <span class="collapse-panel-close"></span>
+                </button>
+                <div class="contact__content">
+                  <p class="contact__paragraph footer-content__paragraph">
+                    <a
+                      target="_blank"
+                      href="mailto:biz_korea@dalba.com"
+                    >biz_korea@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_japan@dalba.com"
+                    >biz_japan@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_russia_CIS@dalba.com"
+                    >biz_russia_CIS@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_america@dalba.com"
+                    >biz_america@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_asean@dalba.com"
+                    >biz_asean@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_pan_china@dalba.com"
+                    >biz_pan_china@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_europe@dalba.com"
+                    >biz_europe@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_middle_east@dalba.com"
+                    >biz_middle_east@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:biz_other_regions@dalba.com"
+                    >biz_other_regions@dalba.com</a><br />
+                    <a
+                      target="_blank"
+                      href="mailto:veganery@dalba.com"
+                    >veganery@dalba.com</a><br />
+                  </p>
+                </div>
+              </li>
+              <li class="contact__item">
+                <button
+                  class="contact__list-title"
+                  type="button"
+                >
+                  <strong>기타 문의</strong>
+                  <span class="collapse-panel-close"></span>
+                </button>
+                <div class="contact__content">
+                  <p class="contact__paragraph footer-content__paragraph">
+                    <a
+                      target="_blank"
+                      href="mailto:dalba@dalba.com"
+                    >dalba@dalba.com</a>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+</html>

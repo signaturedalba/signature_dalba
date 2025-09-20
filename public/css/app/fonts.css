@@ -7,6 +7,20 @@
 
 @font-face {
   font-weight: 400;
+  src: url("/public/assets/fonts/Pretendard-Regular.woff") format("woff");
+  font-family: "Pretendard";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  src: url("/public/assets/fonts/Pretendard-Medium.woff") format("woff");
+  font-family: "Pretendard";
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
   src: url("/public/assets/fonts/Classico-URW-Regular.woff") format("woff");
   font-family: "Classico URW";
   font-display: swap;

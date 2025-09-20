@@ -21,6 +21,8 @@
   --font-en-body: "Meno Display", Arial, Helvetica, sans-serif;
 
   /* Sizes */
+  --wrapper-padding-xs: 7.5vw;
+  --wrapper-padding-sm: 9.5486vw;
   --container-max: 104rem;
 
   /* Z-Index Scale */

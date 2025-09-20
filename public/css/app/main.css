@@ -168,8 +168,6 @@
   gap: min(12.5vw, 50px);
   z-index: 2;
   will-change: transform;
-  padding-left: min(8.75vw, 35px);
-  width: 100%;
   color: var(--color-white);
 }
 
@@ -186,7 +184,7 @@
 }
 
 .horizontal-scroll__paragraph {
-  padding-right: 25px;
+  padding-right: 20px;
   font-weight: 400;
   font-size: 15px;
   line-height: 133.333%;
@@ -216,8 +214,7 @@
 .slide-up-text__content {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 0;
   width: 100%;
   text-align: center;
 }
@@ -458,7 +455,6 @@
   .horizontal-scroll__content {
     top: min(11.863vw, 205px);
     gap: 30px;
-    padding-left: min(9.837vw, 170px);
   }
 
   .horizontal-scroll__heading {
@@ -479,8 +475,8 @@
 
   .slide-up-text__content {
     top: 50%;
-    left: min(9.837vw, 170px);
     transform: translateY(-50%);
+    padding-top: 20px;
     width: auto;
     text-align: left;
   }
@@ -496,7 +492,7 @@
   .slide-up-text .more-link {
     right: auto;
     bottom: min(11.863vw, 205px);
-    left: min(9.837vw, 170px);
+    left: var(--wrapper-padding-sm);
   }
 
   .discover__heading {
@@ -505,6 +501,13 @@
 
   .discover__link-list {
     display: block;
+    position: absolute;
+    top: 59%;
+    left: 48.5%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    width: 60.7638vw;
+    height: 48.7vh;
   }
 
   .discover__link-item {
@@ -512,6 +515,8 @@
     display: -ms-flexbox;
     display: flex;
     position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -531,33 +536,30 @@
   }
 
   .discover__link-item:nth-of-type(1) {
-    top: calc(50% - 140px);
-    left: calc(50% - 174px);
+    transform: translate(-175px, -150px);
   }
 
   .discover__link-item:nth-of-type(2) {
-    top: calc(50% - 25px);
-    left: calc(50% - 130px);
+    transform: translate(-135px, -42px);
   }
 
   .discover__link-item:nth-of-type(3) {
-    top: calc(50% - 152px);
-    left: calc(50% + 40px);
+    transform: translate(20px, -160px);
   }
 
   .discover__link-item:nth-of-type(4) {
-    top: calc(50% - 65px);
-    left: calc(50% + 160px);
+    transform: translate(135px, -80px);
   }
 
   .discover__link-item:nth-of-type(5) {
-    top: calc(50% - 0px);
-    left: calc(50% + 330px);
+    transform: translate(295px, -15px);
   }
 
   .discover__link-item:nth-of-type(6) {
-    top: calc(50% - 205px);
-    left: calc(50% + 505px);
+    top: 25%;
+    right: 0%;
+    left: auto;
+    transform: translate(-35px, -0px);
   }
 
   .discover__link-icon {
