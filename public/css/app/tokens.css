@@ -16,38 +16,9 @@
   --color-primary: #a42135;
 
   /* Typography */
-  --font-sans-primary: Helvetica, Arial, sans-serif;
-  --font-sans-secondary: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
-  --font-brand: abchanel-corpo, Arial, Helvetica, sans-serif;
-
-  /* Font Sizes (base 16) */
-  --fs-2xs: 0.5rem; /* 8px */
-  --fs-xs: 0.6875rem; /* 11px */
-  --fs-sm: 0.75rem; /* 12px */
-  --fs-base: 1rem; /* 16px */
-  --fs-lg: 1.125rem; /* 18px */
-  --fs-xl: 1.75rem; /* 28px */
-  --fs-2xl: 3.375rem; /* 54px */
-
-  /* Line Heights */
-  --lh-tight: 1;
-  --lh-base: 1.5;
-  --lh-relaxed: 1.5625rem; /* 25px on 16px base */
-
-  /* Spacing */
-  --space-2: 0.125rem; /* 2px */
-  --space-4: 0.25rem; /* 4px */
-  --space-6: 0.375rem; /* 6px */
-  --space-8: 0.5rem; /* 8px */
-  --space-10: 0.625rem; /* 10px */
-  --space-12: 0.75rem; /* 12px */
-  --space-16: 1rem; /* 16px */
-  --space-18: 1.125rem; /* 18px */
-  --space-20: 1.25rem; /* 20px */
-  --space-24: 1.5rem; /* 24px */
-  --space-27: 1.6875rem; /* 27px */
-  --space-30: 1.875rem; /* 30px */
-  --space-36: 2.25rem; /* 36px */
+  --font-kr: "Pretendard", Arial, Helvetica, sans-serif;
+  --font-en-title: "Classico URW", Arial, Helvetica, sans-serif;
+  --font-en-body: "Meno Display", Arial, Helvetica, sans-serif;
 
   /* Sizes */
   --container-max: 104rem;
@@ -57,7 +28,6 @@
   --z-breadcrumb: 150;
   --z-footer: 150;
   --z-main: 15;
-  --z-scroll-indicator: 1;
   --z-carousel-control: 10;
   --z-video-preview: 20;
 

@@ -1,59 +1,5 @@
 import { utils } from "./utils.js";
 
-const attachPortalModalHandlers = () => {
-  const triggers = document.querySelectorAll(".portal-trigger");
-
-  triggers.forEach((trigger) => {
-    trigger.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = trigger.getAttribute("data-trigger");
-      if (!targetId) return;
-
-      const portalElement = document.getElementById(targetId);
-      if (!portalElement) return;
-
-      const videoElement = portalElement.querySelector("video");
-
-      portalElement.classList.add("is-active");
-      document.body.style.overflow = "hidden";
-
-      if (videoElement) {
-        utils.setAttributes(videoElement, { preload: "auto" });
-
-        if (!videoElement.getAttribute("src") && videoElement.dataset.src) {
-          utils.setAttributes(videoElement, { src: videoElement.dataset.src });
-        }
-
-        utils.addEventListenerOnce(videoElement, "canplay", () =>
-          utils.playVideoSafely(videoElement)
-        );
-        try {
-          videoElement.load();
-        } catch (_) {}
-      }
-    });
-  });
-
-  const closeButtons = document.querySelectorAll(".portal__close");
-  closeButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const portalElement = btn.closest(".portal");
-      if (!portalElement) return;
-
-      const videoElement = portalElement.querySelector("video");
-
-      portalElement.classList.remove("is-active");
-      document.body.style.overflow = "auto";
-
-      if (videoElement) {
-        videoElement.pause();
-        videoElement.currentTime = 0;
-      }
-    });
-  });
-};
-
 const enableImageLazyLoading = () => {
   const images = Array.from(document.querySelectorAll("img"));
 
@@ -152,21 +98,12 @@ const setupAccessibleVideoPlayers = () => {
 
   containers.forEach((playerElement) => {
     const videoElement = playerElement.querySelector(".video-player__video");
-    const controlElement = playerElement.querySelector(
-      ".video-player__control"
-    );
-    const iconPause = playerElement.querySelector(
-      ".video-player__icon--pressed"
-    );
-    const iconPlay = playerElement.querySelector(
-      ".video-player__icon--not-pressed"
-    );
+    const controlElement = playerElement.querySelector(".video-player__control");
+    const iconPause = playerElement.querySelector(".video-player__icon--pressed");
+    const iconPlay = playerElement.querySelector(".video-player__icon--not-pressed");
 
     if (!videoElement) {
-      console.warn(
-        "VideoPlayer: .video-player__video not found",
-        playerElement
-      );
+      console.warn("VideoPlayer: .video-player__video not found", playerElement);
       return;
     }
 
@@ -176,8 +113,7 @@ const setupAccessibleVideoPlayers = () => {
     const applyStatus = () => {
       const status = state.isPlaying ? "pause" : "play";
       utils.setAttributes(playerElement, { "data-player-status": status });
-      if (hasControl)
-        utils.setAttributes(controlElement, { "data-player-status": status });
+      if (hasControl) utils.setAttributes(controlElement, { "data-player-status": status });
 
       if (iconPause) iconPause.classList.toggle("is-visible", state.isPlaying);
       if (iconPlay) iconPlay.classList.toggle("is-visible", !state.isPlaying);
@@ -330,12 +266,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 400)
   );
 
-  document.documentElement.style.setProperty(
-    "--vh",
-    `${window.innerHeight * 0.01}px`
-  );
+  document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`);
 
   enableImageLazyLoading();
-  attachPortalModalHandlers();
   setupAccessibleVideoPlayers();
 });

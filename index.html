@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
+
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -8,7 +9,16 @@
     />
     <title>Document</title>
     <!-- CSS 파일 로드 -->
-    <link rel="stylesheet" href="/public/css/app/index.css" />
+    <link
+      rel="stylesheet"
+      href="/public/css/app/index.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://fontlibrary.org//face/urw-classico"
+      type="text/css"
+    />
     <!-- GSAP 라이브러리 -->
     <script src="/public/js/gsap/gsap.min.js"></script>
     <script src="/public/js/gsap/EaselPlugin.min.js"></script>
@@ -16,294 +26,372 @@
     <script src="/public/js/gsap/ScrollToPlugin.min.js"></script>
     <script src="/public/js/gsap/Draggable.min.js"></script>
     <!-- JavaScript 파일 로드 -->
-    <script type="module" src="/public/js/app/index.js"></script>
+    <script
+      type="module"
+      src="/public/js/app/index.js"
+    ></script>
   </head>
 
-  <body>
-    <header class="header">
+  <body class="font-kr">
+    <header class="header font-en-title">
       <div class="header__container">
         <h1 class="header__logo">
           <a href="/">
-            <svg
-              aria-hidden="true"
+            <img
               class="header__logo-icon"
-              focusable="false"
-              height="28"
-              width="175"
-              viewBox="0 0 175 28"
-            >
-              <g fill="#fff" fill-rule="evenodd">
-                <path
-                  d="M20.655 17.726l4.565 2.615c-2.282 4.197-6.737 6.922-11.781 6.922C6.075 27.263 0 21.629 0 13.713S6.075.163 13.439.163c5.044 0 9.5 2.725 11.781 6.923L20.655 9.7c-1.326-2.725-4.013-4.381-7.216-4.381-4.603 0-8.1 3.423-8.1 8.394s3.497 8.395 8.1 8.395c3.203 0 5.89-1.657 7.216-4.382M49.705 26.6V15.554H36.818V26.6h-5.154V.826h5.154V10.4h12.887V.826h5.155V26.6h-5.155M79.603 15.922L74.926 5.061 70.25 15.922h9.353zM89.838 26.6h-5.634l-2.54-5.892H68.188l-2.54 5.892h-5.634L71.428.826h6.996L89.838 26.6zM113.586 26.6L99.778 6.313V26.6h-4.786V.826h6.812l11.598 17.084V.826h4.787V26.6h-4.603M128.129 26.6V.826h18.41v4.787h-13.624v5.523h11.782v4.786h-11.782v5.892h14.36V26.6h-19.146M155.56 26.6V.826h5.154v20.62h13.622V26.6H155.56"
-                ></path>
-              </g>
-            </svg>
+              src="https://cdn.dalbasignature.com/assets/dalba-signature-logo-w.png"
+              alt=""
+            />
           </a>
         </h1>
-        <div class="top-bar"></div>
-      </div>
-      <nav class="navigation">
-        <div class="navigation__container">
-          <div class="navigation__trigger">
-            <button type="button" class="navigation__trigger-button">
-              <span class="navigation__trigger-text"
-                >L’ingrédient N°1 DE CHANEL</span
-              >
-              <span class="collapse-panel-close">
-                <svg
-                  fill="none"
-                  aria-hidden="true"
-                  focusable="false"
-                  height="8"
-                  viewBox="0 0 13 8"
-                  width="13"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="collapse-panel-close__icon"
-                >
-                  <path
-                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
-                    fill="#000"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-          </div>
+        <nav class="navigation font-en-title">
           <ul class="navigation__list">
-            <li class="navigation__item uppercase">
-              <a href="/" class="navigation__link">N°1 de Chanel</a>
+            <li class="navigation__item">
+              <a
+                href="/"
+                class="navigation__link"
+              >HOME</a>
             </li>
-            <li class="navigation__item uppercase">
-              <a href="/" class="navigation__link">Le nouveau sérum-en-brume</a>
+            <li class="navigation__item">
+              <a
+                href="/"
+                class="navigation__link"
+              >PRODUCT</a>
             </li>
-            <li class="navigation__item uppercase is-active">
-              <a href="/" class="navigation__link"
-                >L’ingrédient N°1 DE CHANEL</a
-              >
+          </ul>
+        </nav>
+        <div class="language-selector">
+          <ul class="language-selector__list">
+            <li class="language-selector__item">
+              <a
+                href="/"
+                class="language-selector__link"
+              >KR</a>
             </li>
-            <li class="navigation__item uppercase">
-              <a href="/" class="navigation__link">Le rituel N°1 DE CHANEL</a>
-            </li>
-            <li class="navigation__item uppercase">
-              <a href="/" class="navigation__link"
-                >La conviction N°1 de Chanel</a
-              >
+            <li class="language-selector__item">
+              <a
+                href="/"
+                class="language-selector__link"
+              >EN</a>
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
+      <button
+        type="button"
+        class="header__trigger"
+      >
+        <span class="header__trigger-icon header__trigger-icon--1"></span>
+        <span class="header__trigger-icon header__trigger-icon--2"></span>
+        <span class="header__trigger-icon header__trigger-icon--3"></span>
+      </button>
     </header>
     <main class="main-content">
       <section class="hero">
-        <div
-          class="video-player"
-          style="background-image: url('/public/assets/video/hero.jpg')"
-        >
+        <div class="hero__video-player video-player">
           <video
             playsinline
             class="hero__video video-player__video"
-            src="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION1-PC.mp4"
             autoplay
             muted
             loop
             aria-label="메인 비디오"
             preload="metadata"
-          ></video>
-          <button
-            type="button"
-            class="video-player__control"
-            data-player-status="play"
-            aria-label="비디오 재생/일시정지"
-            aria-pressed="false"
           >
-            <svg
-              class="video-player__icon video-player__icon--pressed"
-              focusable="false"
-              aria-hidden="true"
-              viewBox="0 0 20 15"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="Page-1"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fillrule="evenodd"
-              >
-                <g id="ICON_sprite_SVG" fill="#FFFFFF" fillrule="nonzero">
-                  <g id="ICON_pause">
-                    <g id="Group" transform="translate(3.4375, 0)">
-                      <rect
-                        id="Rectangle"
-                        x="0"
-                        y="0"
-                        width="4.6875"
-                        height="15"
-                      ></rect>
-                      <rect
-                        id="Rectangle-Copy-2"
-                        x="8.4375"
-                        y="0"
-                        width="4.6875"
-                        height="15"
-                      ></rect>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <svg
-              class="video-player__icon video-player__icon--not-pressed"
-              focusable="false"
-              aria-hidden="true"
-              viewBox="0 0 20 15"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                id="Page-1"
-                stroke="none"
-                stroke-width="1"
-                fill="none"
-                fillrule="evenodd"
-              >
-                <g id="ICON_sprite_SVG" fill="#FFFFFF" fillrule="nonzero">
-                  <g id="ICON_play">
-                    <g transform="translate(3.65, 0)">
-                      <polygon
-                        id="Page-1-Copy"
-                        points="0 0 0 15 12.700109 7.5008824"
-                      ></polygon>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </svg>
-          </button>
+            <source
+              src="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION1-MO.mp4"
+              media="(max-width: 600px)"
+              type="video/mp4"
+            />
+            <source
+              src="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION1-PC.mp4"
+              media="(min-width: 601px)"
+              type="video/mp4"
+            />
+          </video>
         </div>
         <div class="hero__container">
           <h2 class="hero__heading">
-            <small class="hero__sub-title sub-title"
-              >L’ingrédient N°1 DE CHANEL</small
-            >
-            <strong class="hero__main-title main-title uppercase"
-              >Le camélia rouge, <br />source de jeunesse<br />pour la
-              peau</strong
-            >
+            <img
+              class="hero__title-image"
+              src="https://cdn.dalbasignature.com/assets/signature-logo-w.png"
+              alt=""
+            />
           </h2>
         </div>
       </section>
       <div class="fade-in-text">
+        <p class="fade-in-text__paragraph font-en-title">
+          <span class="fade-in-text__word fade-in-text__word--title">T</span>
+          <span class="fade-in-text__word fade-in-text__word--title">h</span>
+          <span class="fade-in-text__word fade-in-text__word--title">e</span>
+          <span class="fade-in-text__word fade-in-text__word--title">&nbsp;</span>
+          <span class="fade-in-text__word fade-in-text__word--title ">s</span>
+          <span class="fade-in-text__word fade-in-text__word--title">i</span>
+          <span class="fade-in-text__word fade-in-text__word--title">g</span>
+          <span class="fade-in-text__word fade-in-text__word--title">n</span>
+          <span class="fade-in-text__word fade-in-text__word--title">a</span>
+          <span class="fade-in-text__word fade-in-text__word--title">t</span>
+          <span class="fade-in-text__word fade-in-text__word--title">u</span>
+          <span class="fade-in-text__word fade-in-text__word--title">r</span>
+          <span class="fade-in-text__word fade-in-text__word--title">e</span>
+          <br class="hide-sm" />
+          <span class="fade-in-text__word fade-in-text__word--title">&nbsp;</span>
+          <span class="fade-in-text__word fade-in-text__word--title">o</span>
+          <span class="fade-in-text__word fade-in-text__word--title">f</span>
+          <span class="fade-in-text__word fade-in-text__word--title">&nbsp;</span>
+          <span class="fade-in-text__word fade-in-text__word--title">t</span>
+          <span class="fade-in-text__word fade-in-text__word--title">i</span>
+          <span class="fade-in-text__word fade-in-text__word--title">m</span>
+          <span class="fade-in-text__word fade-in-text__word--title">e</span>
+          <span class="fade-in-text__word fade-in-text__word--title">l</span>
+          <span class="fade-in-text__word fade-in-text__word--title">e</span>
+          <span class="fade-in-text__word fade-in-text__word--title">s</span>
+          <span class="fade-in-text__word fade-in-text__word--title">s</span>
+          <span class="fade-in-text__word fade-in-text__word--title">&nbsp;</span>
+          <span class="fade-in-text__word fade-in-text__word--title">e</span>
+          <span class="fade-in-text__word fade-in-text__word--title">l</span>
+          <span class="fade-in-text__word fade-in-text__word--title">a</span>
+          <span class="fade-in-text__word fade-in-text__word--title">s</span>
+          <span class="fade-in-text__word fade-in-text__word--title">t</span>
+          <span class="fade-in-text__word fade-in-text__word--title">i</span>
+          <span class="fade-in-text__word fade-in-text__word--title">c</span>
+          <span class="fade-in-text__word fade-in-text__word--title">i</span>
+          <span class="fade-in-text__word fade-in-text__word--title">t</span>
+          <span class="fade-in-text__word fade-in-text__word--title">y</span>
+        </p>
         <p class="fade-in-text__paragraph">
-          <span class="fade-in-text__word">Le</span>
-          <span class="fade-in-text__word">camélia</span>
-          <span class="fade-in-text__word">rouge</span>
-          <span class="fade-in-text__word">défie</span>
-          <span class="fade-in-text__word">le</span>
-          <span class="fade-in-text__word">temps</span>
-          <span class="fade-in-text__word">avec</span>
-          <span class="fade-in-text__word">sa</span>
-          <span class="fade-in-text__word">longévité</span>
-          <br aria-hidden="true" />
-          <span class="fade-in-text__word">extraordinaire</span>
-          <span class="fade-in-text__word">de</span>
-          <span class="fade-in-text__word">200</span>
-          <span class="fade-in-text__word">ans</span>
+          <span class="fade-in-text__word">하</span>
+          <span class="fade-in-text__word">루</span>
+          <span class="fade-in-text__word">하</span>
+          <span class="fade-in-text__word">루</span>
+          <span class="fade-in-text__word">,</span><br class="hide-sm" />
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">피</span>
+          <span class="fade-in-text__word">부</span>
+          <span class="fade-in-text__word">는</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">말</span>
+          <span class="fade-in-text__word">없</span>
+          <span class="fade-in-text__word">이</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">신</span>
+          <span class="fade-in-text__word">호</span>
+          <span class="fade-in-text__word">를</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">보</span>
+          <span class="fade-in-text__word">냅</span>
+          <span class="fade-in-text__word">니</span>
+          <span class="fade-in-text__word">다</span>
           <span class="fade-in-text__word">.</span>
-          <span class="fade-in-text__word">Après</span>
-          <span class="fade-in-text__word">19</span>
-          <span class="fade-in-text__word">ans</span>
-          <span class="fade-in-text__word">d’études</span>
+        </p>
+        <p class="fade-in-text__paragraph">
+          <span class="fade-in-text__word">늘</span>
+          <span class="fade-in-text__word">어</span>
+          <span class="fade-in-text__word">진</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">결</span>
+          <span class="fade-in-text__word">,</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">무</span>
+          <span class="fade-in-text__word">너</span>
+          <span class="fade-in-text__word">진</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">윤</span>
+          <span class="fade-in-text__word">곽</span>
+          <span class="fade-in-text__word">,</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">깊</span>
+          <span class="fade-in-text__word">어</span>
+          <span class="fade-in-text__word">진</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">주</span>
+          <span class="fade-in-text__word">름</span>
+          <span class="fade-in-text__word">,</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">사</span>
+          <span class="fade-in-text__word">라</span>
+          <span class="fade-in-text__word">진</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">탄</span>
+          <span class="fade-in-text__word">력</span>
           <br aria-hidden="true" />
-          <span class="fade-in-text__word">sur</span>
-          <span class="fade-in-text__word">cette</span>
-          <span class="fade-in-text__word">fleur</span>
-          <span class="fade-in-text__word">emblématique,</span>
-          <span class="fade-in-text__word">la</span>
-          <span class="fade-in-text__word">Recherche</span>
-          <span class="fade-in-text__word">de</span>
-          <span class="fade-in-text__word">CHANEL</span>
+          <span class="fade-in-text__word">보</span>
+          <span class="fade-in-text__word">습</span>
+          <span class="fade-in-text__word">과</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">광</span>
+          <span class="fade-in-text__word">채</span>
+          <span class="fade-in-text__word">만</span>
+          <span class="fade-in-text__word">으</span>
+          <span class="fade-in-text__word">로</span>
+          <span class="fade-in-text__word">는</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">채</span>
+          <span class="fade-in-text__word">워</span>
+          <span class="fade-in-text__word">지</span>
+          <span class="fade-in-text__word">지</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">않</span>
+          <span class="fade-in-text__word">는</span>
           <br aria-hidden="true" />
-          <span class="fade-in-text__word">a</span>
-          <span class="fade-in-text__word">réussi</span>
-          <span class="fade-in-text__word">à</span>
-          <span class="fade-in-text__word">capturer</span>
-          <span class="fade-in-text__word">au</span>
-          <span class="fade-in-text__word">cœur</span>
-          <span class="fade-in-text__word">de</span>
-          <span class="fade-in-text__word">ses</span>
-          <span class="fade-in-text__word">pétales</span>
-          <span class="fade-in-text__word">un</span>
-          <span class="fade-in-text__word">actif</span>
-          <br aria-hidden="true" />
-          <span class="fade-in-text__word">revitalisant</span>
-          <span class="fade-in-text__word">et</span>
-          <span class="fade-in-text__word">antioxydant</span>
-          <span class="fade-in-text__word">qui</span>
-          <span class="fade-in-text__word">stimule</span>
-          <span class="fade-in-text__word">la</span>
-          <span class="fade-in-text__word">vitalité</span>
-          <br aria-hidden="true" />
-          <span class="fade-in-text__word">de</span>
-          <span class="fade-in-text__word">la</span>
-          <span class="fade-in-text__word">peau</span>
-          <span class="fade-in-text__word">pour</span>
-          <span class="fade-in-text__word">préserver</span>
-          <span class="fade-in-text__word">sa</span>
-          <span class="fade-in-text__word">jeunesse.</span>
+          <span class="fade-in-text__word">공</span>
+          <span class="fade-in-text__word">백</span>
+          <span class="fade-in-text__word">이</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">생</span>
+          <span class="fade-in-text__word">기</span>
+          <span class="fade-in-text__word">기</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">시</span>
+          <span class="fade-in-text__word">작</span>
+          <span class="fade-in-text__word">합</span>
+          <span class="fade-in-text__word">니</span>
+          <span class="fade-in-text__word">다</span>
+          <span class="fade-in-text__word">.</span>
         </p>
       </div>
-      <div class="scroll-indicator">
-        <p class="scroll-indicator__text">Faire défiler</p>
-        <span class="scroll-indicator__animation"></span>
+      <div class="fade-in-text">
+        <p class="fade-in-text__paragraph">
+          <span class="fade-in-text__word">이</span>
+          <span class="fade-in-text__word">제</span>
+          <span class="fade-in-text__word">는</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">더</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">정</span>
+          <span class="fade-in-text__word">교</span>
+          <span class="fade-in-text__word">하</span>
+          <span class="fade-in-text__word">고</span>
+          <span class="fade-in-text__word">,</span><br class="hide-sm" />
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">더</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">강</span>
+          <span class="fade-in-text__word">력</span>
+          <span class="fade-in-text__word">한</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">케</span>
+          <span class="fade-in-text__word">어</span>
+          <span class="fade-in-text__word">가</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">필</span>
+          <span class="fade-in-text__word">요</span>
+          <span class="fade-in-text__word">한</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">때</span>
+          <span class="fade-in-text__word">.</span>
+        </p>
+        <p class="fade-in-text__paragraph">
+          <span class="fade-in-text__word">피</span>
+          <span class="fade-in-text__word">부</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">본</span>
+          <span class="fade-in-text__word">연</span>
+          <span class="fade-in-text__word">의</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">힘</span>
+          <span class="fade-in-text__word">을</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">깨</span>
+          <span class="fade-in-text__word">우</span>
+          <span class="fade-in-text__word">고</span>
+          <span class="fade-in-text__word">,</span>
+          <br aria-hidden="true" />
+          <span class="fade-in-text__word">탄</span>
+          <span class="fade-in-text__word">력</span>
+          <span class="fade-in-text__word">의</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">구</span>
+          <span class="fade-in-text__word">조</span>
+          <span class="fade-in-text__word">를</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">다</span>
+          <span class="fade-in-text__word">시</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">세</span>
+          <span class="fade-in-text__word">우</span>
+          <span class="fade-in-text__word">는</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">리</span>
+          <span class="fade-in-text__word">추</span>
+          <span class="fade-in-text__word">얼</span>
+          <span class="fade-in-text__word">.</span>
+          <br aria-hidden="true" />
+          <span class="fade-in-text__word">d'Alba</span>
+          <span class="fade-in-text__word">는</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">그</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">해</span>
+          <span class="fade-in-text__word">답</span>
+          <span class="fade-in-text__word">을</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">'Signature'</span>
+          <span class="fade-in-text__word">로</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">말</span>
+          <span class="fade-in-text__word">합</span>
+          <span class="fade-in-text__word">니</span>
+          <span class="fade-in-text__word">다</span>
+          <span class="fade-in-text__word">.</span>
+        </p>
+        <p class="fade-in-text__paragraph">
+          <span class="fade-in-text__word">고</span>
+          <span class="fade-in-text__word">기</span>
+          <span class="fade-in-text__word">능</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">안</span>
+          <span class="fade-in-text__word">티</span>
+          <span class="fade-in-text__word">에</span>
+          <span class="fade-in-text__word">이</span>
+          <span class="fade-in-text__word">징</span>
+          <span class="fade-in-text__word">의</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">새</span>
+          <span class="fade-in-text__word">로</span>
+          <span class="fade-in-text__word">운</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">기</span>
+          <span class="fade-in-text__word">준</span>
+          <span class="fade-in-text__word">,</span>
+          <br aria-hidden="true" />
+          <span class="fade-in-text__word">지</span>
+          <span class="fade-in-text__word">금</span>
+          <span class="fade-in-text__word">,</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">그</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">시</span>
+          <span class="fade-in-text__word">작</span>
+          <span class="fade-in-text__word">을</span>
+          <span class="fade-in-text__word">&nbsp;</span>
+          <span class="fade-in-text__word">함</span>
+          <span class="fade-in-text__word">께</span>
+          <span class="fade-in-text__word">하</span>
+          <span class="fade-in-text__word">세</span>
+          <span class="fade-in-text__word">요</span>
+          <span class="fade-in-text__word">.</span>
+        </p>
       </div>
-      <section class="parallax">
-        <picture class="parallax__picture">
-          <source
-            srcset="
-              https://www.chanel.com/puls-img/c_limit,w_320/q_auto:good,f_auto,dpr_1.1/1728631886768-n1camelliascientificfeatparallaxmjpg_1480x750.jpg
-            "
-            type="image/webp"
-            media="(max-width: 600px)"
-            height="1480"
-            width="750"
-            sizes="(min-width: 601px) 100vw, 100vw"
-          />
-          <source
-            srcset="
-              https://www.chanel.com/puls-img/1728631886637-n1camelliascientificfeatparallaxdjpg_1660x2880.jpg
-            "
-            type="image/webp"
-            media="(min-width: 601px)"
-            height="1660"
-            width="2880"
-            sizes="(min-width: 601px) 100vw, 100vw"
-          />
-          <img loading="lazy" class="parallax__image" alt="parallax-image" />
-        </picture>
-        <div class="parallax__container">
-          <h2 class="parallax__heading">
-            <span class="parallax__main-title main-title uppercase"
-              >Une prouesse<br />scientifique</span
-            >
-          </h2>
-          <p class="parallax__paragraph paragraph">
-            19 années de recherche autour du camélia rouge<br />dans le
-            laboratoire à ciel ouvert CHANEL de Gaujacq<br />
-            ont permis de révéler ses pouvoirs de jeunesse.
-          </p>
-        </div>
-      </section>
       <section class="horizontal-scroll">
         <ul class="horizontal-scroll__list">
           <li class="horizontal-scroll__item">
             <picture class="horizontal-scroll__picture">
               <source
-                srcset="
-                  https://www.chanel.com/puls-img/1733148490911-n1camelliaextractionstep1djpg_1660x2880.jpg
-                "
-                type="image/webp"
+                srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION3-1-MO.png"
+                type="image/png"
+                media="(max-width: 600px)"
+                height="402"
+                width="874"
+                sizes="(max-width: 600px) 100vw, 100vw"
+              />
+              <source
+                srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION3-1-PC.png"
+                type="image/png"
                 media="(min-width: 601px)"
-                height="1660"
-                width="2880"
+                height="1920"
+                width="1080"
                 sizes="(min-width: 601px) 100vw, 100vw"
               />
               <img
@@ -314,29 +402,38 @@
             </picture>
             <div class="horizontal-scroll__content">
               <h2 class="horizontal-scroll__heading">
-                <small class="horizontal-scroll__sub-title sub-title"
-                  >Étape 1</small
-                >
-                <span class="horizontal-scroll__main-title main-title uppercase"
-                  >La fragmentation <br />à froid</span
-                >
+                <small class="horizontal-scroll__sub-title sub-title font-en-title"> STEP 1 </small>
+                <span class="horizontal-scroll__main-title main-title">
+                  <br class="show-md" />
+                  깊이를 더한 변화, <br />시그니처의 시작
+                </span>
               </h2>
-              <p class="horizontal-scroll__paragraph paragraph">
-                Les pétales de camélia rouge sont soigneusement isolés des
-                autres parties de la fleur.
+              <p class="horizontal-scroll__paragraph">
+                달바는 그동안 모든 피부 타입을 위한 안심하고 사용할 수 있는<br class="hide-sm" /> 보습·광채 안티에이징 솔루션을
+                개발해왔습니다.<br />
+                그러나 피부는 더 복합적인 해답을 필요로 했고, <br class="hide-sm" />우리는 그 변화에 응답하기로 했습니다.<br /><br />
+                3년이 넘는 시간, <br class="hide-sm" />우리는 오직 하나의 목표를 위해 연구하고 테스트했습니다.<br />
+                노화된 피부를 근본적으로 다시 세울, <br class="hide-sm" />정교하고 강력한 탄력 솔루션 <br class="hide-sm" />‘d’Alba Signature’가
+                탄생했습니다.
               </p>
             </div>
           </li>
           <li class="horizontal-scroll__item">
             <picture class="horizontal-scroll__picture">
               <source
-                srcset="
-                  https://www.chanel.com/puls-img/1733148490786-n1camelliaextractionstep2djpg_1660x2880.jpg
-                "
-                type="image/webp"
+                srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION3-2-MO.png"
+                type="image/png"
+                media="(max-width: 600px)"
+                height="402"
+                width="874"
+                sizes="(max-width: 600px) 100vw, 100vw"
+              />
+              <source
+                srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION3-2-PC.png"
+                type="image/png"
                 media="(min-width: 601px)"
-                height="1660"
-                width="2880"
+                height="1920"
+                width="1080"
                 sizes="(min-width: 601px) 100vw, 100vw"
               />
               <img
@@ -347,30 +444,39 @@
             </picture>
             <div class="horizontal-scroll__content">
               <h2 class="horizontal-scroll__heading">
-                <small class="horizontal-scroll__sub-title sub-title"
-                  >Étape 2</small
-                >
-                <span class="horizontal-scroll__main-title main-title uppercase"
-                  >L’hydrofusion<br />des pétales</span
-                >
+                <small class="horizontal-scroll__sub-title sub-title font-en-title">STEP 2</small>
+                <span class="horizontal-scroll__main-title main-title">
+                  피부과학의 정수를 담은,<br />
+                  달바만의 독자 성분<br />
+                  <span class="font-en-title">Truffle Tension Complex™</span>
+                </span>
               </h2>
-              <p class="horizontal-scroll__paragraph paragraph">
-                Un procédé d’hydrofusion des pétales pour libérer leurs
-                propriétés antioxydantes et revitalisantes.
+              <p class="horizontal-scroll__paragraph">
+                고기능 탄력 케어는 강력한 성분 설계에서부터 시작됩니다.<br />
+                우리는 이탈리아산 화이트 트러플의 강력한 항산화 성분에<br />
+                순도 99% 비타민C, 글루타티온, 단백질 12종,<br class="hide-sm" /> 히알루론산 10종을 더해<br class="show-sm" />
+                지친 피부를 근본부터 리프팅하는<br />
+                달바만의 독자 성분 ‘트러플 텐션 콤플렉스™’를 개발했습니다.
               </p>
             </div>
           </li>
           <li class="horizontal-scroll__item">
             <picture class="horizontal-scroll__picture">
               <source
-                srcset="
-                  https://www.chanel.com/puls-img/1733148490686-n1camelliaextractionstep3djpg_1660x2880.jpg
-                "
-                type="image/webp"
+                srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION3-3-MO.png"
+                type="image/png"
+                media="(max-width: 600px)"
+                height="402"
+                width="874"
+                sizes="(max-width: 600px) 100vw, 100vw"
+              />
+              <source
+                srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION3-3-PC.png"
+                type="image/png"
                 media="(min-width: 601px)"
-                height="1660"
-                width="2880"
-                sizes="(min-width: 601px) 100vw, 100vw"
+                height="1920"
+                width="1080"
+                sizes="(min-widtparallax__image: 601px) 100vw, 100vw"
               />
               <img
                 loading="lazy"
@@ -380,145 +486,64 @@
             </picture>
             <div class="horizontal-scroll__content">
               <h2 class="horizontal-scroll__heading">
-                <small class="horizontal-scroll__sub-title sub-title"
-                  >Étape 3</small
-                >
-                <span class="horizontal-scroll__main-title main-title uppercase"
-                  >La purification<br />des pétales</span
-                >
+                <small class="horizontal-scroll__sub-title sub-title font-en-title">STEP 3</small>
+                <span class="horizontal-scroll__main-title main-title">
+                  빠르게, 깊게.<br />
+                  피부 속으로 닿는 효능<br />
+                  <span class="font-en-title">Truffle EXOSOME™</span></span>
+                </span>
               </h2>
-              <p class="horizontal-scroll__paragraph paragraph">
-                L’étape de purification permet de filtrer la solution pour ne
-                conserver que son essence : l’extrait de camélia rouge.
+              <p class="horizontal-scroll__paragraph">
+                우리가 주목한 것은 성분만이 아닙니다.<br />
+                이탈리아산 화이트 트러플에서 추출한<br class="hide-sm" /> 나노 사이즈의 흡수력 높은 *트러플엑소좀이<br />
+                피부 결점 케어에 뛰어난 유효 성분들을 코팅하여<br />
+                빠르고 효과적으로 효능 성분을 피부 속으로 전달해 줍니다.<br />
+                <small>*순도 98% 레티놀, 순도 98% PDRN, 순도 99% EGF, 순도 99% 글루타티온, 단백질 15종, 히알루론산10종</small>
               </p>
             </div>
           </li>
         </ul>
-        <div class="video-modal-preview">
-          <div class="video-modal-preview__mobile-container">
-            <!-- Mobile -->
-            <button
-              type="button"
-              data-trigger="video-modal"
-              class="video-modal-mobile-trigger portal-trigger"
-            >
-              <span class="video-modal-mobile-trigger__icon-box">
-                <svg
-                  class="video-modal-mobile-trigger__icon"
-                  viewBox="0 0 11 12"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path d="m10.5 6-10 6v-12z"></path>
-                </svg>
-              </span>
-              <span class="video-modal-mobile-trigger__text">Voir le film</span>
-            </button>
-          </div>
-          <!-- PC -->
-          <div class="video-modal-preview__pc-container">
-            <div
-              class="video-player"
-              style="
-                background-image: url('/public/assets/video/video-modal-preview.jpg');
-              "
-            >
-              <video
-                playsinline
-                class="video-modal-preview__video video-player__video"
-                src="/public/assets/video/video-modal-preview.mp4"
-                autoplay
-                muted
-                loop
-              ></video>
-            </div>
-            <button
-              data-trigger="video-modal"
-              class="video-modal-pc-trigger uppercase portal-trigger"
-            >
-              <svg
-                class="video-modal-pc-trigger__icon"
-                viewBox="0 0 11 12"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path d="m10.5 6-10 6v-12z"></path>
-              </svg>
-              <span class="video-modal-pc-trigger__text uppercase"
-                >Voir le film</span
-              >
-            </button>
-          </div>
-        </div>
-      </section>
-      <section class="extension">
-        <div class="extension__container">
-          <picture class="extension__picture">
-            <source
-              srcset="
-                https://www.chanel.com/puls-img/c_limit,w_960/q_auto:good,f_auto,dpr_1.1/1733148799726-n1camelliaflowerextractionparallaxmjpg_1778x750.jpg
-              "
-              type="image/webp"
-              media="(max-width: 600px)"
-              8height="1779"
-              width="750"
-              sizes="(min-width: 601px) 100vw, 100vw"
-            />
-            <source
-              srcset="
-                https://www.chanel.com/puls-img/1733148801616-n1camelliaflowerextractionparallaxdjpg_3110x2880.jpg
-              "
-              type="image/webp"
-              media="(min-width: 601px)"
-              height="3110"
-              width="2880"
-              sizes="(min-width: 601px) 100vw, 100vw"
-            />
-            <img
-              loading="lazy"
-              class="extension__image"
-              alt="extension-image"
-            />
-          </picture>
-          <div class="extension__content">
-            <h2 class="extension__heading">
-              <span class="extension__main-title uppercase"
-                >La jeunesse <br />est une science</span
-              >
-            </h2>
-            <p class="extension__paragraph paragraph">
-              Sélectionné par la Recherche de CHANEL, l’extrait de camélia rouge
-              est un puissant actif qui agit au cœur de la peau.
-            </p>
-          </div>
-        </div>
       </section>
       <section class="slide-up-text">
-        <div class="slide-up-text__container wrapper">
+        <div class="slide-up-text__container">
+          <div class="slide-up-text__video-player video-player">
+            <video
+              playsinline
+              class="slide-up-text__video video-player__video"
+              muted
+              loop
+              aria-label="메인 비디오"
+              preload="metadata"
+            >
+              <source
+                src="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION4-MO.mp4"
+                media="(max-width: 600px)"
+                type="video/mp4"
+              />
+              <source
+                src="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION4-PC.mp4"
+                media="(min-width: 601px)"
+                type="video/mp4"
+              />
+            </video>
+          </div>
           <div class="slide-up-text__content">
             <h2 class="slide-up-text__heading">
-              <small class="slide-up-text__sub-title uppercase"
-                >Jour après jour</small
-              >
-              <span class="slide-up-text__main-title uppercase"
-                >La peau est<br />éclatante de<br />jeunesse</span
-              >
+              <span class="slide-up-text__main-title main-title">
+                토탈 탄력 리추얼<br />
+                <span class="font-en-title">The 6-Step <br class="hide-sm" />Ritual</span>
+              </span>
             </h2>
-            <p class="slide-up-text__paragraph paragraph">
-              La ligne N°1 DE CHANEL agit instantanément sur les signes de
-              jeunesse de la peau : les rides, l’élasticité, les pores et
-              l’éclat. Son efficacité se renforce avec le temps. La peau est
-              visiblement plus lisse et éclatante de jeunesse.
+            <p class="slide-up-text__paragraph">
+              피부 탄력은 단일 제품으로 완성되지 않습니다.<br />
+              우리는 탄력의 시작부터 마무리까지 단계별로 설계된 시그니처 6종 리추얼을 완성했습니다.<br />
+              지금, 당신의 피부가 가장 빛나던 그때로 다시 시작하세요.
             </p>
           </div>
-          <div class="slide-up-text__appear">
-            <p class="slide-up-text__effect uppercase">
-              Stimule la vitalité de la peau
-            </p>
-            <p class="slide-up-text__accent uppercase">
-              63%<sup class="slide-up-text__accent-sup uppercase">**</sup>
-            </p>
-          </div>
+          <a
+            class="more-link font-en-body"
+            href="#"
+          >detail > </a>
         </div>
       </section>
       <section class="carousel">
@@ -546,106 +571,11 @@
           </button>
           <div class="carousel__draggable">
             <ul class="carousel__list">
-              <li class="carousel__item carousel__item--video">
-                <div
-                  class="video-player"
-                  style="
-                    background-image: url('/public/assets/video/carousel3.jpg');
-                  "
-                >
-                  <video
-                    playsinline
-                    class="carousel__video video-player__video"
-                    src="/public/assets/video/carousel3.mp4"
-                    loop
-                  ></video>
-                  <button
-                    type="button"
-                    class="video-player__control"
-                    data-player-status="play"
-                    aria-label="비디오 재생/일시정지"
-                    aria-pressed="false"
-                  >
-                    <svg
-                      class="video-player__icon video-player__icon--pressed"
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 20 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        id="Page-1"
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fillrule="evenodd"
-                      >
-                        <g
-                          id="ICON_sprite_SVG"
-                          fill="#FFFFFF"
-                          fillrule="nonzero"
-                        >
-                          <g id="ICON_pause">
-                            <g id="Group" transform="translate(3.4375, 0)">
-                              <rect
-                                id="Rectangle"
-                                x="0"
-                                y="0"
-                                width="4.6875"
-                                height="15"
-                              ></rect>
-                              <rect
-                                id="Rectangle-Copy-2"
-                                x="8.4375"
-                                y="0"
-                                width="4.6875"
-                                height="15"
-                              ></rect>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                    <svg
-                      class="video-player__icon video-player__icon--not-pressed"
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 20 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        id="Page-1"
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fillrule="evenodd"
-                      >
-                        <g
-                          id="ICON_sprite_SVG"
-                          fill="#FFFFFF"
-                          fillrule="nonzero"
-                        >
-                          <g id="ICON_play">
-                            <g transform="translate(3.65, 0)">
-                              <polygon
-                                id="Page-1-Copy"
-                                points="0 0 0 15 12.700109 7.5008824"
-                              ></polygon>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                </div>
-              </li>
               <li class="carousel__item carousel__item--image">
                 <picture class="carousel__picture">
                   <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1733149600335-n1camelliacloseupparallaxdjpg_1340x890.jpg
-                    "
-                    type="image/webp"
+                    srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION5-1-PC%20MO.png"
+                    type="image/png"
                   />
                   <img
                     loading="lazy"
@@ -654,106 +584,11 @@
                   />
                 </picture>
               </li>
-              <li class="carousel__item carousel__item--video">
-                <div
-                  class="video-player"
-                  style="
-                    background-image: url('/public/assets/video/carousel2.jpg');
-                  "
-                >
-                  <video
-                    playsinline
-                    class="carousel__video video-player__video"
-                    src="/public/assets/video/carousel2.mp4"
-                    loop
-                  ></video
-                  ><button
-                    type="button"
-                    class="video-player__control"
-                    data-player-status="play"
-                    aria-label="비디오 재생/일시정지"
-                    aria-pressed="false"
-                  >
-                    <svg
-                      class="video-player__icon video-player__icon--pressed"
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 20 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        id="Page-1"
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fillrule="evenodd"
-                      >
-                        <g
-                          id="ICON_sprite_SVG"
-                          fill="#FFFFFF"
-                          fillrule="nonzero"
-                        >
-                          <g id="ICON_pause">
-                            <g id="Group" transform="translate(3.4375, 0)">
-                              <rect
-                                id="Rectangle"
-                                x="0"
-                                y="0"
-                                width="4.6875"
-                                height="15"
-                              ></rect>
-                              <rect
-                                id="Rectangle-Copy-2"
-                                x="8.4375"
-                                y="0"
-                                width="4.6875"
-                                height="15"
-                              ></rect>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                    <svg
-                      class="video-player__icon video-player__icon--not-pressed"
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 20 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        id="Page-1"
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fillrule="evenodd"
-                      >
-                        <g
-                          id="ICON_sprite_SVG"
-                          fill="#FFFFFF"
-                          fillrule="nonzero"
-                        >
-                          <g id="ICON_play">
-                            <g transform="translate(3.65, 0)">
-                              <polygon
-                                id="Page-1-Copy"
-                                points="0 0 0 15 12.700109 7.5008824"
-                              ></polygon>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                </div>
-              </li>
               <li class="carousel__item carousel__item--image">
                 <picture class="carousel__picture">
                   <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1733149600283-n1camelliaactifparallaxdjpg_1340x890.jpg
-                    "
-                    type="image/webp"
+                    srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION5-2-PC%20MO.png"
+                    type="image/png"
                   />
                   <img
                     loading="lazy"
@@ -762,98 +597,44 @@
                   />
                 </picture>
               </li>
-              <li class="carousel__item carousel__item--video">
-                <div
-                  class="video-player"
-                  style="
-                    background-image: url('/public/assets/video/carousel1.jpg');
-                  "
-                >
-                  <video
-                    playsinline
-                    class="carousel__video video-player__video"
-                    src="/public/assets/video/carousel1.mp4"
-                    loop
-                  ></video
-                  ><button
-                    type="button"
-                    class="video-player__control"
-                    data-player-status="play"
-                    aria-label="비디오 재생/일시정지"
-                    aria-pressed="false"
-                  >
-                    <svg
-                      class="video-player__icon video-player__icon--pressed"
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 20 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        id="Page-1"
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fillrule="evenodd"
-                      >
-                        <g
-                          id="ICON_sprite_SVG"
-                          fill="#FFFFFF"
-                          fillrule="nonzero"
-                        >
-                          <g id="ICON_pause">
-                            <g id="Group" transform="translate(3.4375, 0)">
-                              <rect
-                                id="Rectangle"
-                                x="0"
-                                y="0"
-                                width="4.6875"
-                                height="15"
-                              ></rect>
-                              <rect
-                                id="Rectangle-Copy-2"
-                                x="8.4375"
-                                y="0"
-                                width="4.6875"
-                                height="15"
-                              ></rect>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                    <svg
-                      class="video-player__icon video-player__icon--not-pressed"
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 20 15"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <g
-                        id="Page-1"
-                        stroke="none"
-                        stroke-width="1"
-                        fill="none"
-                        fillrule="evenodd"
-                      >
-                        <g
-                          id="ICON_sprite_SVG"
-                          fill="#FFFFFF"
-                          fillrule="nonzero"
-                        >
-                          <g id="ICON_play">
-                            <g transform="translate(3.65, 0)">
-                              <polygon
-                                id="Page-1-Copy"
-                                points="0 0 0 15 12.700109 7.5008824"
-                              ></polygon>
-                            </g>
-                          </g>
-                        </g>
-                      </g>
-                    </svg>
-                  </button>
-                </div>
+              <li class="carousel__item carousel__item--image">
+                <picture class="carousel__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION5-3-PC%20MO.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="carousel__image"
+                    alt="carousel-image"
+                  />
+                </picture>
+              </li>
+              <li class="carousel__item carousel__item--image">
+                <picture class="carousel__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION5-4-PC%20MO.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="carousel__image"
+                    alt="carousel-image"
+                  />
+                </picture>
+              </li>
+              <li class="carousel__item carousel__item--image">
+                <picture class="carousel__picture">
+                  <source
+                    srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION5-5-PC%20MO.png"
+                    type="image/png"
+                  />
+                  <img
+                    loading="lazy"
+                    class="carousel__image"
+                    alt="carousel-image"
+                  />
+                </picture>
               </li>
             </ul>
           </div>
@@ -883,672 +664,241 @@
     </main>
     <div class="discover">
       <div class="discover__container">
-        <h2 class="discover__heading">
-          <span class="discover__main-title main-title uppercase">
-            Les rituels <br />
-            N°1 de Chanel </span
-          ><a href="#" class="discover__link uppercase link-trigger">
-            <span>Voir tout</span>
-          </a>
-        </h2>
-        <div class="products">
-          <div class="products__container wrapper">
-            <ul class="products__list">
-              <li class="products__item products__item-1">
-                <picture class="products__picture">
-                  <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1729781818412-n1essencelotionrevitpng_945x401.png
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    loading="lazy"
-                    class="products__image"
-                    alt="products-image"
-                  />
-                </picture>
-                <a href="#" class="product-link link-trigger">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    class="product-link__icon"
-                    height="21"
-                    viewBox="0 0 21 21"
-                    fill="none"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
-                      fill="#A42135"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="products__item products__item-2">
-                <picture class="products__picture">
-                  <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1729781818998-n1serumyeuxrevitpng_694x431.png
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    loading="lazy"
-                    class="products__image"
-                    alt="products-image"
-                  />
-                </picture>
-                <a href="#" class="product-link link-trigger">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    class="product-link__icon"
-                    height="21"
-                    viewBox="0 0 21 21"
-                    fill="none"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
-                      fill="#A42135"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="products__item products__item-3">
-                <picture class="products__picture">
-                  <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1729781818429-n1serumrevitpng_900x348.png
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    loading="lazy"
-                    class="products__image"
-                    alt="products-image"
-                  />
-                </picture>
-                <a href="#" class="product-link link-trigger">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    class="product-link__icon"
-                    height="21"
-                    viewBox="0 0 21 21"
-                    fill="none"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
-                      fill="#A42135"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="products__item products__item-4">
-                <picture class="products__picture">
-                  <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1733759338612-n1targetcremepng_268x414.png
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    loading="lazy"
-                    class="products__image"
-                    alt="products-image"
-                  />
-                </picture>
-                <a href="#" class="product-link link-trigger">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    class="product-link__icon"
-                    height="21"
-                    viewBox="0 0 21 21"
-                    fill="none"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
-                      fill="#A42135"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="products__item products__item-5">
-                <picture class="products__picture">
-                  <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1746455568778-sebpng_1080x752.png
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    loading="lazy"
-                    class="products__image"
-                    alt="products-image"
-                  />
-                </picture>
-                <a href="#" class="product-link link-trigger">
-                  <span class="product-link__text uppercase"> NOUVEAU </span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    class="product-link__icon"
-                    height="21"
-                    viewBox="0 0 21 21"
-                    fill="none"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
-                      fill="#A42135"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-              <li class="products__item products__item-6">
-                <picture class="products__picture">
-                  <source
-                    srcset="
-                      https://www.chanel.com/puls-img/1729781596783-n1lipspng_435x768.png
-                    "
-                    type="image/webp"
-                  />
-                  <img
-                    loading="lazy"
-                    class="products__image"
-                    alt="products-image"
-                  />
-                </picture>
-                <a href="#" class="product-link link-trigger">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21"
-                    class="product-link__icon"
-                    height="21"
-                    viewBox="0 0 21 21"
-                    fill="none"
-                    focusable="false"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
-                      fill="#A42135"
-                    ></path>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+        <picture class="discover__picture">
+          <source
+            srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION6-MO.png"
+            type="image/png"
+            media="(max-width: 600px)"
+            height="402"
+            width="874"
+            sizes="(max-width: 600px) 100vw, 100vw"
+          />
+          <source
+            srcset="https://cdn.dalbasignature.com/assets/MAIN/MAIN-SECTION6-PC.png"
+            type="image/png"
+            media="(min-width: 601px)"
+            height="1920"
+            width="1080"
+            sizes="(min-width: 601px) 100vw, 100vw"
+          />
+          <img
+            loading="lazy"
+            class="discover__image"
+            alt="discover-image"
+          />
+        </picture>
+        <div class="discover__content">
+          <h2 class="discover__heading">
+            <span class="discover__main-title main-title"> 당신의 루틴에 <br class="hide-sm" />시그니처를 더하세요 </span>
+          </h2>
+          <ul class="discover__link-list">
+            <li class="discover__link-item">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  class="discover__link-icon"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
+                    fill="#D9D9D9"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="discover__link-item">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  class="discover__link-icon"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
+                    fill="#D9D9D9"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="discover__link-item">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  class="discover__link-icon"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
+                    fill="#D9D9D9"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="discover__link-item">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  class="discover__link-icon"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
+                    fill="#D9D9D9"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="discover__link-item">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  class="discover__link-icon"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
+                    fill="#D9D9D9"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+            <li class="discover__link-item">
+              <a href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="21"
+                  class="discover__link-icon"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M10.6411 1.97217C8.8925 1.97217 7.475 3.38967 7.475 5.13825V5.98254H3.04248V18.6469H18.2397V5.98254H13.8072V5.13825C13.8072 3.38967 12.3897 1.97217 10.6411 1.97217ZM12.5407 7.24898V10.204H13.8072V7.24898H16.9733V17.3804H4.30891V7.24898H7.475V10.204H8.74143V7.24898H12.5407ZM12.5407 5.98254V5.13825C12.5407 4.0891 11.6902 3.2386 10.6411 3.2386C9.59194 3.2386 8.74143 4.0891 8.74143 5.13825V5.98254H12.5407Z"
+                    fill="#D9D9D9"
+                  ></path>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <a
+            class="more-link font-en-body"
+            href="#"
+          >detail > </a>
         </div>
       </div>
     </div>
-    <div class="mention">
-      <ul class="mention__list">
-        <li class="mention__item">* Camellia Japonica.</li>
-        <li class="mention__item">
-          ** Test d’activité enzymatique sur un modèle de peau reconstruite in
-          vitro traité avec l’extrait de camélia rouge.
-        </li>
-      </ul>
-    </div>
-    <div class="sub-footer">
-      <div class="sub-footer__container wrapper">
-        <ul class="sub-footer__list">
-          <li class="sub-footer__item">
-            <button class="sub-footer__title uppercase" type="button">
-              <strong>CONTACTER UN CONSEILLER</strong>
-              <span class="collapse-panel-close">
-                <svg
-                  fill="none"
-                  aria-hidden="true"
-                  focusable="false"
-                  height="8"
-                  viewBox="0 0 13 8"
-                  width="13"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="collapse-panel-close__icon"
-                >
-                  <path
-                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
-                    fill="#000"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-            <div class="sub-footer__content">
-              <p class="sub-footer__paragraph">
-                Les conseillers CHANEL sont à votre disposition pour toute
-                information du lundi au samedi, de 10h00 à 19h00.<br />
-                Vous pouvez nous contacter par
-                <a
-                  class="sub-footer__link"
-                  href="mailto:https://services.chanel.com/fr_FR/contact"
-                  >e-mail</a
-                >, nous appeler ou nous joindre sur
-                <a class="sub-footer__link" href="https://wa.me/33975181509"
-                  >WhatsApp</a
-                >au
-                <a href="tel:+33975181509" class="sub-footer__link"
-                  >+33975181509</a
-                >.
-              </p>
-            </div>
-          </li>
-          <li class="sub-footer__item">
-            <button class="sub-footer__title uppercase" type="button">
-              <strong>Trouver une boutique rouge.</strong>
-              <span class="collapse-panel-close"
-                ><svg
-                  fill="none"
-                  aria-hidden="true"
-                  focusable="false"
-                  height="8"
-                  viewBox="0 0 13 8"
-                  width="13"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="collapse-panel-close__icon"
-                >
-                  <path
-                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
-                    fill="#000"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-            <div class="sub-footer__content">
-              <p class="sub-footer__paragraph">
-                Saisissez un lieu pour trouver les boutiques CHANEL les plus
-                proches
-              </p>
-            </div>
-          </li>
-          <li class="sub-footer__item">
-            <button class="sub-footer__title uppercase" type="button">
-              <strong>NEWSLETTER</strong>
-              <span class="collapse-panel-close"
-                ><svg
-                  fill="none"
-                  aria-hidden="true"
-                  focusable="false"
-                  height="8"
-                  viewBox="0 0 13 8"
-                  width="13"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="collapse-panel-close__icon"
-                >
-                  <path
-                    d="m12.0649 1.39682-5.68121 5.66816c-.12684.12609-.33169.12609-.45853 0l-5.671416-5.67142c-.126086-.12684-.126086-.33168 0-.458523.126839-.126086.331688-.126086.458527 0l5.440529 5.434023 5.4438-5.434023c.1268-.126086.3317-.126086.4585 0 .0645.059739.102.143023.1041.230893.0005.08643-.0335.16951-.0943.23089z"
-                    fill="#000"
-                  ></path>
-                </svg>
-              </span>
-            </button>
-            <div class="sub-footer__content">
-              <p class="sub-footer__paragraph">
-                Abonnez-vous pour suivre toute l’actualité de la Maison CHANEL
-              </p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <nav class="breadcrumb">
-      <div class="breadcrumb__container wrapper">
-        <ul class="breadcrumb__list">
-          <li class="breadcrumb__item">
-            <a href="#" class="breadcrumb__link">
-              <svg
-                fill="#000"
-                aria-hidden="true"
-                class="breadcrumb__logo"
-                focusable="false"
-                height="28"
-                width="175"
-                viewBox="0 0 175 28"
-              >
-                <g fill-rule="evenodd">
-                  <path
-                    d="M20.655 17.726l4.565 2.615c-2.282 4.197-6.737 6.922-11.781 6.922C6.075 27.263 0 21.629 0 13.713S6.075.163 13.439.163c5.044 0 9.5 2.725 11.781 6.923L20.655 9.7c-1.326-2.725-4.013-4.381-7.216-4.381-4.603 0-8.1 3.423-8.1 8.394s3.497 8.395 8.1 8.395c3.203 0 5.89-1.657 7.216-4.382M49.705 26.6V15.554H36.818V26.6h-5.154V.826h5.154V10.4h12.887V.826h5.155V26.6h-5.155M79.603 15.922L74.926 5.061 70.25 15.922h9.353zM89.838 26.6h-5.634l-2.54-5.892H68.188l-2.54 5.892h-5.634L71.428.826h6.996L89.838 26.6zM113.586 26.6L99.778 6.313V26.6h-4.786V.826h6.812l11.598 17.084V.826h4.787V26.6h-4.603M128.129 26.6V.826h18.41v4.787h-13.624v5.523h11.782v4.786h-11.782v5.892h14.36V26.6h-19.146M155.56 26.6V.826h5.154v20.62h13.622V26.6H155.56"
-                  ></path>
-                </g>
-              </svg>
-            </a>
-          </li>
-          <li class="breadcrumb__item">
-            <a href="#" class="breadcrumb__link">
-              <span> Soin </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="breadcrumb"></div>
     <footer class="footer">
       <div class="footer__container">
         <h2 class="footer__heading">
           <a href="#">
-            <svg
+            <img
               class="footer__logo"
-              fill="#fff"
-              height="28"
-              width="175"
-              viewBox="0 0 175 28"
-            >
-              <g fill-rule="evenodd">
-                <path
-                  d="M20.655 17.726l4.565 2.615c-2.282 4.197-6.737 6.922-11.781 6.922C6.075 27.263 0 21.629 0 13.713S6.075.163 13.439.163c5.044 0 9.5 2.725 11.781 6.923L20.655 9.7c-1.326-2.725-4.013-4.381-7.216-4.381-4.603 0-8.1 3.423-8.1 8.394s3.497 8.395 8.1 8.395c3.203 0 5.89-1.657 7.216-4.382M49.705 26.6V15.554H36.818V26.6h-5.154V.826h5.154V10.4h12.887V.826h5.155V26.6h-5.155M79.603 15.922L74.926 5.061 70.25 15.922h9.353zM89.838 26.6h-5.634l-2.54-5.892H68.188l-2.54 5.892h-5.634L71.428.826h6.996L89.838 26.6zM113.586 26.6L99.778 6.313V26.6h-4.786V.826h6.812l11.598 17.084V.826h4.787V26.6h-4.603M128.129 26.6V.826h18.41v4.787h-13.624v5.523h11.782v4.786h-11.782v5.892h14.36V26.6h-19.146M155.56 26.6V.826h5.154v20.62h13.622V26.6H155.56"
-                ></path>
-              </g>
-            </svg>
+              src="https://cdn.dalbasignature.com/assets/dalba-signature-logo.png"
+              alt=""
+            />
           </a>
         </h2>
-        <div class="footer__body wrapper">
-          <div class="sitemap">
-            <div class="sitemap__article">
-              <p class="sitemap__title uppercase">
-                <strong>Explorer CHANEL.com</strong>
-              </p>
-              <ul class="sitemap__list">
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Haute Couture</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Mode</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Haute Joaillerie</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Joaillerie</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Horlogerie</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Lunettes</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Parfums</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Maquillage</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Soin</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Plan du site</a>
-                </li>
-              </ul>
-            </div>
-            <div class="sitemap__article">
-              <p class="sitemap__title uppercase">
-                <strong> Services en ligne </strong>
-              </p>
-              <ul class="sitemap__list">
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Modes de paiement</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Options de livraison</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Mon compte</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Retours</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Conseils & Services</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">FAQ</a>
-                </li>
-              </ul>
-            </div>
-            <div class="sitemap__article">
-              <p class="sitemap__title uppercase">
-                <strong> Services en boutique </strong>
-              </p>
-              <ul class="sitemap__list">
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Trouver une boutique</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Prendre rendez-vous</a>
-                </li>
-              </ul>
-            </div>
-            <div class="sitemap__article">
-              <p class="sitemap__title uppercase">
-                <strong> La Maison CHANEL </strong>
-              </p>
-              <ul class="sitemap__list">
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Carrières</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Mentions légales</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link"
-                    >Politique de confidentialité</a
-                  >
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Signaler </a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link"
-                    >Lutte contre la contrefaçon</a
-                  >
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link">Résultats financiers</a>
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link"
-                    >Obligations liées au développement durable</a
-                  >
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link"
-                    >Déclaration sur la Joaillerie Responsable</a
-                  >
-                </li>
-                <li class="sitemap__item">
-                  <a href="#" class="sitemap__link"
-                    >Accessibilité : partiellement conforme</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer__content">
-            <div class="change-language">
-              <span class="change-language__label"
-                >Change location and language
-              </span>
-              <button type="button" class="change-language__button">
-                <span class="change-language__button-text">
-                  France - Français
-                </span>
-                <svg
-                  class="change-language__button-icon"
-                  viewBox="0 -4.5 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
+        <div class="footer__body">
+          <article class="information footer-content">
+            <h3 class="footer-content__title">주식회사 달바글로벌</h3>
+            <p class="information__paragraph footer-content__paragraph">
+              서울특별시 마포구 마포대로 78, 12층 (도화동, 자람빌딩) (04031)<br />
+              CEO : 반성연<br />
+              Hosting by NHN Commerce<br />
+              Tel : 02-332-7727<br />
+              Information manager 유명한
+            </p>
+            <p class="information__paragraph footer-content__paragraph">
+              Business Registeration No. 840-88-00333.<br />
+              Online Sales Reg No. 제 2016-서울마포-0721호<br />
+              © d'alba GLOBAL.
+            </p>
+          </article>
+          <article class="contact footer-content">
+            <h3 class="contact__title footer-content__title">Contact</h3>
+            <ul class="contact__list">
+              <li class="contact__item">
+                <button
+                  class="contact__list-title"
+                  type="button"
                 >
-                  <g
-                    stroke="none"
-                    stroke-width="1"
-                    fill="none"
-                    fill-rule="evenodd"
-                  >
-                    <g
-                      id="Dribbble-Light-Preview"
-                      transform="translate(-220.000000, -6684.000000)"
-                      fill="#767676"
-                    >
-                      <g transform="translate(56.000000, 160.000000)">
-                        <path
-                          d="M164.292308,6524.36583 L164.292308,6524.36583 C163.902564,6524.77071 163.902564,6525.42619 164.292308,6525.83004 L172.555873,6534.39267 C173.33636,6535.20244 174.602528,6535.20244 175.383014,6534.39267 L183.70754,6525.76791 C184.093286,6525.36716 184.098283,6524.71997 183.717533,6524.31405 C183.328789,6523.89985 182.68821,6523.89467 182.29347,6524.30266 L174.676479,6532.19636 C174.285736,6532.60124 173.653152,6532.60124 173.262409,6532.19636 L165.705379,6524.36583 C165.315635,6523.96094 164.683051,6523.96094 164.292308,6524.36583"
-                        ></path>
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </button>
-            </div>
-            <div class="footer__content-end">
-              <div class="social">
-                <ul class="social__list">
-                  <li class="social__item">
-                    <a href="#" class="social__link">
-                      <svg
-                        class="social__icon"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-                          fill="#767676"
-                        />
-                        <path
-                          d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-                          fill="#767676"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
-                          fill="#767676"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="social__item">
-                    <a href="#" class="social__link">
-                      <svg
-                        class="social__icon"
-                        viewBox="-5 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                      >
-                        <g
-                          stroke="none"
-                          stroke-width="1"
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <g
-                            transform="translate(-385.000000, -7399.000000)"
-                            fill="#767676"
-                          >
-                            <g transform="translate(56.000000, 160.000000)">
-                              <path
-                                d="M335.821282,7259 L335.821282,7250 L338.553693,7250 L339,7246 L335.821282,7246 L335.821282,7244.052 C335.821282,7243.022 335.847593,7242 337.286884,7242 L338.744689,7242 L338.744689,7239.14 C338.744689,7239.097 337.492497,7239 336.225687,7239 C333.580004,7239 331.923407,7240.657 331.923407,7243.7 L331.923407,7246 L329,7246 L329,7250 L331.923407,7250 L331.923407,7259 L335.821282,7259 Z"
-                              ></path>
-                            </g>
-                          </g>
-                        </g>
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="social__item">
-                    <a href="#" class="social__link">
-                      <svg
-                        class="social__icon"
-                        viewBox="0 -3 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                      >
-                        <g
-                          stroke="none"
-                          stroke-width="1"
-                          fill="none"
-                          fill-rule="evenodd"
-                        >
-                          <g
-                            transform="translate(-300.000000, -7442.000000)"
-                            fill="#767676"
-                          >
-                            <g transform="translate(56.000000, 160.000000)">
-                              <path
-                                d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289"
-                              ></path>
-                            </g>
-                          </g>
-                        </g>
-                      </svg>
-                    </a>
-                  </li>
-                  <li class="social__item">
-                    <a href="#" class="social__link">
-                      <svg
-                        class="social__icon"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z"
-                          fill="#767676"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+                  <strong>비즈니스 문의</strong>
+                  <span class="collapse-panel-close"></span>
+                </button>
+                <div class="contact__content">
+                  <p class="contact__paragraph footer-content__paragraph">
+                    <a href="mailto:biz_korea@dalba.com">biz_korea@dalba.com</a><br />
+                    <a href="mailto:biz_japan@dalba.com">biz_japan@dalba.com</a><br />
+                    <a href="mailto:biz_russia_CIS@dalba.com">biz_russia_CIS@dalba.com</a><br />
+                    <a href="mailto:biz_america@dalba.com">biz_america@dalba.com</a><br />
+                    <a href="mailto:biz_asean@dalba.com">biz_asean@dalba.com</a><br />
+                    <a href="mailto:biz_pan_china@dalba.com">biz_pan_china@dalba.com</a><br />
+                    <a href="mailto:biz_europe@dalba.com">biz_europe@dalba.com</a><br />
+                    <a href="mailto:biz_middle_east@dalba.com">biz_middle_east@dalba.com</a><br />
+                    <a href="mailto:biz_other_regions@dalba.com">biz_other_regions@dalba.com</a><br />
+                    <a href="mailto:veganery@dalba.com">veganery@dalba.com</a><br />
+                  </p>
+                </div>
+              </li>
+              <li class="contact__item">
+                <button
+                  class="contact__list-title"
+                  type="button"
+                >
+                  <strong>기타 문의</strong>
+                  <span class="collapse-panel-close"></span>
+                </button>
+                <div class="contact__content">
+                  <p class="contact__paragraph footer-content__paragraph">
+                    <a href="mailto:dalba@dalba.com">dalba@dalba.com</a>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </article>
         </div>
       </div>
     </footer>
-    <div id="video-modal" class="portal">
-      <div class="portal__container">
-        <div class="video-modal">
-          <div
-            class="video-player"
-            style="
-              background-image: url('/public/assets/video/video-modal.jpg');
-            "
-          >
-            <video
-              playsinline
-              class="video-modal__video video-player__video"
-              src="/public/assets/video/video-modal.mp4"
-              loop
-              controls
-            ></video>
-          </div>
-        </div>
-        <button type="button" class="portal__close"></button>
-      </div>
-    </div>
   </body>
+
 </html>

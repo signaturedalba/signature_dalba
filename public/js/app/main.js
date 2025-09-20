@@ -1,75 +1,57 @@
 import { utils } from "./utils.js";
 
-const initHeroTitleReveal = () => {
-  const EASE_OUT = "power2.out";
-
-  gsap.set([".hero__sub-title", ".hero__main-title"], { y: 30, opacity: 0 });
-
-  const timeline = gsap.timeline({ delay: 0.5 });
-  timeline
-    .to(".hero__sub-title", {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      ease: EASE_OUT,
-    })
-    .to(
-      ".hero__main-title",
-      { y: 0, opacity: 1, duration: 1, ease: EASE_OUT },
-      "-=0.7"
-    );
-};
+const initHeroTitleReveal = () => {};
 
 const initFadeInTextProgressHighlight = () => {
-  const wordElements = gsap.utils.toArray(".fade-in-text__word");
-  if (!wordElements.length) return;
+  const fadeInTextElements = gsap.utils.toArray(".fade-in-text");
+  if (!fadeInTextElements.length) return;
 
-  const START_HIGHLIGHT_INDEX = 2;
-  let lastIndex = START_HIGHLIGHT_INDEX;
+  fadeInTextElements.forEach((fadeInElement, index) => {
+    const defaultColor = "#5A432F";
+    const highlightColor = "#ffffff";
+    const wordElements = gsap.utils.toArray(
+      ".fade-in-text__word",
+      fadeInElement,
+    );
+    if (!wordElements.length) return;
 
-  const setRangeColor = (from, to, color) => {
-    for (let i = from; i <= to; i++) {
-      if (wordElements[i]) wordElements[i].style.color = color;
-    }
-  };
-  if (lastIndex >= 0) setRangeColor(0, lastIndex, "#a42135");
+    const START_HIGHLIGHT_INDEX = 2;
+    let lastIndex = START_HIGHLIGHT_INDEX;
 
-  ScrollTrigger.create({
-    trigger: ".fade-in-text",
-    start: "top top",
-    end: "+=200%",
-    scrub: 1,
-    pin: true,
-    pinSpacing: true,
-    anticipatePin: 1,
-    invalidateOnRefresh: true,
-    onUpdate: (self) => {
-      const total = wordElements.length;
-      if (!total) return;
-
-      const targetIndex = Math.floor(self.progress * (total - 1) + 0.00001);
-      if (targetIndex === lastIndex || targetIndex < START_HIGHLIGHT_INDEX)
-        return;
-      if (targetIndex > lastIndex) {
-        setRangeColor(lastIndex + 1, targetIndex, "#a42135");
-      } else {
-        setRangeColor(targetIndex + 1, lastIndex, "#d8d8d8");
+    const setRangeColor = (from, to, color) => {
+      for (let i = from; i <= to; i++) {
+        if (wordElements[i]) wordElements[i].style.color = color;
       }
-      lastIndex = targetIndex;
-    },
-  });
-};
+    };
 
-const initParallaxImageScroll = () => {
-  gsap.to(".parallax__image", {
-    yPercent: -10,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".parallax",
-      start: "top bottom",
-      end: "bottom 50%",
+    // 초기 색상 설정
+    setRangeColor(0, wordElements.length - 1, defaultColor);
+    if (lastIndex >= 0) setRangeColor(0, lastIndex, highlightColor);
+
+    ScrollTrigger.create({
+      trigger: fadeInElement,
+      start: "top top",
+      end: "+=200%",
       scrub: 1,
-    },
+      pin: true,
+      // pinSpacing: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        const total = wordElements.length;
+        if (!total) return;
+
+        const targetIndex = Math.floor(self.progress * (total - 1) + 0.00001);
+        if (targetIndex === lastIndex || targetIndex < START_HIGHLIGHT_INDEX)
+          return;
+        if (targetIndex > lastIndex) {
+          setRangeColor(lastIndex + 1, targetIndex, highlightColor);
+        } else {
+          setRangeColor(targetIndex + 1, lastIndex, defaultColor);
+        }
+        lastIndex = targetIndex;
+      },
+    });
   });
 };
 
@@ -110,7 +92,7 @@ const initHorizontalSectionsReveal = () => {
     timeline.to(
       itemElement,
       { clipPath: "inset(0 100% 0 0)", ease: "power2.inOut" },
-      at
+      at,
     );
     if (contentElement) {
       timeline.to(contentElement, { x: "-150%", ease: "power2.inOut" }, at);
@@ -118,36 +100,15 @@ const initHorizontalSectionsReveal = () => {
   }
 };
 
-const initExtensionMaskReveal = () => {
-  gsap.set(".extension__container", {
-    clipPath: "rect(20% 80% 50% 20%)",
-  });
-
-  const timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".extension",
-      start: "top bottom",
-      end: "center center",
-      scrub: 1,
-    },
-  });
-
-  timeline.to(".extension__container", {
-    clipPath: "rect(0% 100% 100% 0%)",
-    ease: "power2.in",
-    duration: 1,
-  });
-};
-
 const initSlideUpTextReveal = () => {
-  gsap.set([".slide-up-text__effect", ".slide-up-text__accent"], {
+  gsap.set([".slide-up-text__main-title", ".slide-up-text__paragraph"], {
     y: 30,
     opacity: 0,
   });
 
   const timeline = gsap.timeline({ paused: true });
 
-  timeline.to(".slide-up-text__effect", {
+  timeline.to(".slide-up-text__main-title", {
     y: 0,
     opacity: 1,
     duration: 1,
@@ -155,16 +116,17 @@ const initSlideUpTextReveal = () => {
   });
 
   timeline.to(
-    ".slide-up-text__accent",
+    ".slide-up-text__paragraph",
     {
       y: 0,
       opacity: 1,
       duration: 1,
       ease: "power2.out",
     },
-    "-=0.7"
+    "-=0.7",
   );
 
+  // 텍스트 애니메이션 트리거
   ScrollTrigger.create({
     trigger: ".slide-up-text",
     start: "top 30%",
@@ -175,6 +137,64 @@ const initSlideUpTextReveal = () => {
       timeline.reverse();
     },
   });
+
+  // 동영상 자동 재생 트리거 (섹션 최상단이 뷰포트 하단에 위치할 때)
+  const videoElement = document.querySelector(".slide-up-text__video");
+  if (videoElement) {
+    // 해당 비디오의 플레이어 인스턴스 찾기
+    const getVideoPlayer = () => {
+      if (window.videoPlayers) {
+        return window.videoPlayers.find(
+          (player) => player.videoElement === videoElement,
+        );
+      }
+      return null;
+    };
+
+    ScrollTrigger.create({
+      trigger: ".slide-up-text",
+      start: "top bottom", // 섹션 최상단이 뷰포트 하단에 위치할 때
+      end: "bottom top", // 섹션 하단이 뷰포트 상단에 위치할 때
+      onEnter: () => {
+        // 비디오 플레이어 인스턴스를 통해 재생 (상태 관리 포함)
+        const player = getVideoPlayer();
+        if (player && player.play) {
+          player.play();
+        } else {
+          // 플레이어 인스턴스가 없으면 직접 재생
+          utils.playVideoSafely(videoElement);
+        }
+      },
+      onLeave: () => {
+        // 비디오 플레이어 인스턴스를 통해 일시정지 (상태 관리 포함)
+        const player = getVideoPlayer();
+        if (player && player.pause) {
+          player.pause();
+        } else {
+          // 플레이어 인스턴스가 없으면 직접 일시정지
+          videoElement.pause();
+        }
+      },
+      onEnterBack: () => {
+        // 스크롤을 되돌려서 다시 진입할 때 재생
+        const player = getVideoPlayer();
+        if (player && player.play) {
+          player.play();
+        } else {
+          utils.playVideoSafely(videoElement);
+        }
+      },
+      onLeaveBack: () => {
+        // 스크롤을 되돌려서 섹션을 벗어날 때 일시정지
+        const player = getVideoPlayer();
+        if (player && player.pause) {
+          player.pause();
+        } else {
+          videoElement.pause();
+        }
+      },
+    });
+  }
 };
 
 const initCarouselScrollAndControls = () => {
@@ -281,13 +301,11 @@ const initCarouselScrollAndControls = () => {
       fastScrollEnd: true,
       onEnter: () => {
         utils.addClassname(".discover", "is-sticky");
-        utils.addClassname(".sub-footer", "is-sticky");
         utils.addClassname(".breadcrumb", "is-sticky");
         utils.addClassname(".footer", "is-sticky");
       },
       onEnterBack: () => {
         utils.addClassname(".discover", "is-sticky");
-        utils.addClassname(".sub-footer", "is-sticky");
         utils.addClassname(".breadcrumb", "is-sticky");
         utils.addClassname(".footer", "is-sticky");
       },
@@ -429,7 +447,7 @@ const initCarouselScrollAndControls = () => {
     tween = gsap.fromTo(
       listElement,
       { x: 0 },
-      { x: toX, ease: "linear", duration: 0.05, paused: true }
+      { x: toX, ease: "linear", duration: 0.05, paused: true },
     );
 
     combinedST = ScrollTrigger.create({
@@ -452,7 +470,7 @@ const initCarouselScrollAndControls = () => {
     "resize",
     utils.debounce(() => {
       initializeCarouselScrollTriggers();
-    }, 400)
+    }, 400),
   );
 
   utils.onBreakpointChange({
@@ -463,31 +481,10 @@ const initCarouselScrollAndControls = () => {
   });
 };
 
-const initScrollIndicatorAutoHide = () => {
-  const helper = document.querySelector(".scroll-indicator");
-  if (!helper) return;
-
-  gsap.set(helper, { opacity: 1 });
-
-  ScrollTrigger.create({
-    trigger: ".parallax",
-    start: "top bottom",
-    onEnter: () => {
-      gsap.to(helper, { opacity: 0, duration: 0.5, ease: "power2.out" });
-    },
-    onLeaveBack: () => {
-      gsap.to(helper, { opacity: 1, duration: 0.5, ease: "power2.out" });
-    },
-  });
-};
-
 document.addEventListener("DOMContentLoaded", (event) => {
   initHeroTitleReveal();
   initFadeInTextProgressHighlight();
-  initParallaxImageScroll();
   initHorizontalSectionsReveal();
-  initExtensionMaskReveal();
   initSlideUpTextReveal();
   initCarouselScrollAndControls();
-  initScrollIndicatorAutoHide();
 });
