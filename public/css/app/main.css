@@ -56,9 +56,6 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  transition:
-    top 0.1s linear,
-    width 0.1s linear;
 }
 
 .hero__container.is-fade-out {
@@ -392,7 +389,7 @@
   text-align: center;
 }
 
-.discover-link {
+.products {
   display: none;
 }
 
@@ -445,11 +442,163 @@
 
   .discover {
     bottom: 0;
+    background-image: linear-gradient(
+      180deg,
+      #000000 0%,
+      #240c00 50%,
+      #411e02 60%,
+      #713b03 70%,
+      #ad7028 80%,
+      #ffe4af 100%
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--color-white);
   }
 
   .discover__container {
     height: 100vh;
     min-height: 100vh;
+  }
+
+  .discover__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .discover__heading {
+    padding-top: 17vh;
+  }
+
+  .discover__picture {
+    display: none;
+  }
+
+  .products {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 12vh;
+  }
+
+  .products::after {
+    display: block;
+    position: relative;
+    transform: translateY(clamp(-28px, -1.446vw, -19.6656px));
+    z-index: 10;
+    border-top: 5px solid #444;
+    background-image: linear-gradient(to top, #000, #333);
+    width: 100%;
+    height: clamp(19.6656px, 1.446vw, 28px);
+    content: "";
+  }
+  .products__list {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: flex-end;
+    transform: translateX(clamp(50px, 4.166vw, 80px));
+
+    width: clamp(893.2928px, 65.683vw, 1261px);
+  }
+
+  .products__item {
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+  }
+
+  .products__item--capsule {
+    left: 0;
+    width: clamp(342.3664px, 25.174vw, 483px);
+  }
+
+  .products__item--color-correction {
+    margin-left: clamp(-77px, -4vw, -54.4px);
+    width: clamp(145.6016px, 10.706vw, 206px);
+  }
+
+  .products__item--double-ampoule {
+    margin-left: clamp(-33px, -1.736vw, -23.6096px);
+    width: clamp(149.532px, 10.995vw, 211px);
+  }
+
+  .products__item--essence-toner {
+    transform: translateY(clamp(7.8744px, 0.579vw, 11px));
+    margin-left: clamp(-96px, -5vw, -68px);
+    width: clamp(236.1096px, 17.361vw, 333px);
+  }
+
+  .products__item--liposome {
+    transform: translateY(clamp(-6px, -0.289vw, -3.9304px));
+    margin-left: clamp(-67px, -3.472vw, -47.2192px);
+    width: clamp(133.7968px, 9.838vw, 189px);
+  }
+
+  .products__item--spray-ampoule {
+    right: 0;
+    transform: translateY(clamp(-11px, -0.579vw, -7.8744px));
+    margin-left: clamp(-111px, -5.787vw, -78.7032px);
+    width: clamp(314.8128px, 23.148vw, 444px);
+  }
+
+  .products__item--essence-toner .products__image {
+    transform: rotate(-6deg);
+  }
+
+  .products__anchor {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-line-pack: center;
+    z-index: 5;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 0.5px solid #d9d9d9;
+    border-radius: 50%;
+    width: clamp(27.54px, 2.025vw, 39px);
+    height: clamp(27.54px, 2.025vw, 39px);
+  }
+
+  .products__item--capsule .products__anchor {
+    transform: translate(clamp(-17px, -0.868vw, -11.8048px), clamp(-24px, -1.25vw, -17px));
+  }
+  .products__item--color-correction .products__anchor {
+    transform: translate(clamp(-33px, -1.736vw, -23.6096px), clamp(-28px, -1.447vw, -19.6792px));
+  }
+  .products__item--double-ampoule .products__anchor {
+    transform: translate(clamp(-22px, -1.157vw, -15.7352px), clamp(-30px, -1.591vw, -21.6376px));
+  }
+  .products__item--essence-toner .products__anchor {
+    transform: translate(clamp(-94px, -4.918vw, -66.8848px), clamp(-8px, -0.434vw, -5.9024px));
+  }
+  .products__item--liposome .products__anchor {
+    transform: translate(clamp(-48px, -2.5vw, -34px), clamp(-30px, -1.591vw, -21.6376px));
+  }
+  .products__item--spray-ampoule .products__anchor {
+    transform: translate(clamp(-156px, -8.102vw, -110.1872px), clamp(-44px, -2.315vw, -31.484px));
+  }
+
+  .products__icon {
+    width: 60%;
+    height: auto;
+  }
+
+  .discover .more-link {
+    display: none;
   }
 }
 
@@ -490,61 +639,10 @@
     display: block;
     margin-top: 35px;
   }
-
-  .discover__heading {
-    padding-top: 190px;
-  }
-
-  .discover-link {
-  }
-
-  .discover-link__anchor {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-line-pack: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    border: 0.5px solid #d9d9d9;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-  }
-
-  .discover-link__icon {
-    width: 21px;
-    height: auto;
-  }
-
-  .discover .more-link {
-    /* display: none; */
-  }
 }
 
 @media (min-width: 1201px) {
-  .discover-link__list {
-    top: calc(min(9.895vw, 190px) + 75px);
-  }
 }
 
 @media (min-width: 1850px) {
-  .discover-link__list {
-    right: 24.5vw;
-    left: 22vw;
-    transform: none;
-    width: auto;
-    height: 100px;
-  }
 }
