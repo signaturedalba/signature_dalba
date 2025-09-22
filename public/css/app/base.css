@@ -8,7 +8,8 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 var(--wrapper-padding-xs);
+  padding-right: var(--wrapper-padding-xs);
+  padding-left: var(--wrapper-padding-xs);
   width: 100%;
 }
 
@@ -28,7 +29,6 @@
   font-weight: 400;
   font-family: var(--font-en-title);
   letter-spacing: -0.36px;
-  text-transform: uppercase;
 }
 
 .main-title {
@@ -38,10 +38,10 @@
   letter-spacing: -1.14px;
 }
 
-.main-title .font-en-title {
+.accent-title {
   font-size: 40px;
-  line-height: 0;
   letter-spacing: -0.8px;
+  text-transform: uppercase;
 }
 
 .sub-title {
@@ -64,6 +64,10 @@
   letter-spacing: -0.36px;
 }
 
+.text-transform-none {
+  text-transform: none;
+}
+
 .collapse-panel-close {
   position: absolute;
   top: 50%;
@@ -80,9 +84,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   transition: -webkit-transform var(--duration-300) var(--ease-in-out);
+  -webkit-transition: -webkit-transform var(--duration-300) var(--ease-in-out);
   transition: transform var(--duration-300) var(--ease-in-out);
+  transition: transform var(--duration-300) var(--ease-in-out), -webkit-transform var(--duration-300) var(--ease-in-out);
   transition:
     transform var(--duration-300) var(--ease-in-out),
     -webkit-transform var(--duration-300) var(--ease-in-out);
@@ -99,11 +106,13 @@
 }
 
 .collapse-panel-close:after {
-  transform: translate(-50%, -50%) rotate(90deg);
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+          transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .collapse-panel-close.is-active:after {
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .video-player {
@@ -161,7 +170,8 @@
   }
 
   .wrapper {
-    padding: 0 var(--wrapper-padding-sm);
+    padding-right: var(--wrapper-padding-sm);
+    padding-left: var(--wrapper-padding-sm);
   }
 }
 
@@ -180,7 +190,7 @@
     letter-spacing: -1.8px;
   }
 
-  .main-title .font-en-title {
+  .accent-title {
     font-size: 65px;
     letter-spacing: -1.3px;
   }
@@ -201,5 +211,13 @@
     font-size: 15px;
     line-height: 25px;
     letter-spacing: -0.45px;
+  }
+
+  .en-page .main-title {
+    letter-spacing: -1.2px;
+  }
+
+  .en-page .paragraph {
+    letter-spacing: -0.19px;
   }
 }

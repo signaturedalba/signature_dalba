@@ -55,15 +55,27 @@
 .hero__container {
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 .hero__container.is-fade-out {
+  -webkit-animation: fade-out var(--duration-300) linear forwards;
   animation: fade-out var(--duration-300) linear forwards;
 }
 
 .hero__container.is-fade-in {
+  -webkit-animation: fade-in var(--duration-300) linear forwards;
   animation: fade-in var(--duration-300) linear forwards;
+}
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-out {
@@ -72,6 +84,15 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -105,6 +126,13 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: transform;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#372719),
+    to(var(--color-black))
+  );
   background-image: linear-gradient(to bottom, #372719, var(--color-black));
   height: 100vh;
   /* height: calc(var(--vh, 1vh) * 100); */
@@ -217,6 +245,10 @@
   gap: min(15vw, 60px);
 }
 
+.horizontal-scroll__accent-title {
+  line-height: 0;
+}
+
 .slide-up-text {
   background-size: cover;
   overflow: hidden;
@@ -235,6 +267,8 @@
   position: absolute;
   top: 50%;
   left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 100%;
   text-align: center;
 }
@@ -367,6 +401,7 @@
 .discover__image {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -393,6 +428,18 @@
   display: none;
 }
 
+.en-page .more-link__text {
+  text-decoration: none;
+}
+
+.en-page .horizontal-scroll__heading {
+  line-height: 1.25;
+}
+
+.en-page .discover__main-title {
+  text-transform: uppercase;
+}
+
 @media (min-width: 601px) {
   .hero__video-player {
     background-image: url("https://cdn.dalbasignature.com/assets/POSTER/MAIN-SECTION1-PC.jpg");
@@ -411,6 +458,20 @@
     background-image: url("https://cdn.dalbasignature.com/assets/POSTER/MAIN-SECTION4-PC.jpg");
   }
 
+  .slide-up-text__content {
+    padding-top: 20px;
+    width: auto;
+    text-align: left;
+  }
+
+  .slide-up-text__paragraph {
+    display: block;
+    margin-top: 35px;
+  }
+
+  .more-link .wrapper {
+    text-align: left;
+  }
   .carousel {
     padding: 0;
     height: 100vh;
@@ -442,6 +503,17 @@
 
   .discover {
     bottom: 0;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#000000),
+      color-stop(50%, #240c00),
+      color-stop(60%, #411e02),
+      color-stop(70%, #713b03),
+      color-stop(80%, #ad7028),
+      to(#ffe4af)
+    );
     background-image: linear-gradient(
       180deg,
       #000000 0%,
@@ -451,6 +523,8 @@
       #ad7028 80%,
       #ffe4af 100%
     );
+    background-image: url("https://cdn.dalbasignature.com/assets/MAIN/background_02.jpeg");
+    background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--color-white);
@@ -462,7 +536,12 @@
   }
 
   .discover__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -475,10 +554,21 @@
   }
 
   .products {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding-bottom: 12vh;
   }
@@ -486,27 +576,46 @@
   .products::after {
     display: block;
     position: relative;
+    -webkit-transform: translateY(clamp(-28px, -1.446vw, -19.6656px));
     transform: translateY(clamp(-28px, -1.446vw, -19.6656px));
     z-index: 10;
     border-top: 5px solid #444;
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(#000),
+      to(#333)
+    );
     background-image: linear-gradient(to top, #000, #333);
     width: 100%;
     height: clamp(19.6656px, 1.446vw, 28px);
     content: "";
   }
   .products__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
+    -webkit-transform: translateX(clamp(50px, 4.166vw, 80px));
     transform: translateX(clamp(50px, 4.166vw, 80px));
 
     width: clamp(893.2928px, 65.683vw, 1261px);
   }
 
   .products__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: relative;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
   }
 
@@ -526,12 +635,14 @@
   }
 
   .products__item--essence-toner {
+    -webkit-transform: translateY(clamp(7.8744px, 0.579vw, 11px));
     transform: translateY(clamp(7.8744px, 0.579vw, 11px));
     margin-left: clamp(-96px, -5vw, -68px);
     width: clamp(236.1096px, 17.361vw, 333px);
   }
 
   .products__item--liposome {
+    -webkit-transform: translateY(clamp(-6px, -0.289vw, -3.9304px));
     transform: translateY(clamp(-6px, -0.289vw, -3.9304px));
     margin-left: clamp(-67px, -3.472vw, -47.2192px);
     width: clamp(133.7968px, 9.838vw, 189px);
@@ -539,12 +650,14 @@
 
   .products__item--spray-ampoule {
     right: 0;
+    -webkit-transform: translateY(clamp(-11px, -0.579vw, -7.8744px));
     transform: translateY(clamp(-11px, -0.579vw, -7.8744px));
     margin-left: clamp(-111px, -5.787vw, -78.7032px);
     width: clamp(314.8128px, 23.148vw, 444px);
   }
 
   .products__item--essence-toner .products__image {
+    -webkit-transform: rotate(-6deg);
     transform: rotate(-6deg);
   }
 
@@ -574,22 +687,64 @@
   }
 
   .products__item--capsule .products__anchor {
-    transform: translate(clamp(-17px, -0.868vw, -11.8048px), clamp(-24px, -1.25vw, -17px));
+    -webkit-transform: translate(
+      clamp(-17px, -0.868vw, -11.8048px),
+      clamp(-24px, -1.25vw, -17px)
+    );
+    transform: translate(
+      clamp(-17px, -0.868vw, -11.8048px),
+      clamp(-24px, -1.25vw, -17px)
+    );
   }
   .products__item--color-correction .products__anchor {
-    transform: translate(clamp(-33px, -1.736vw, -23.6096px), clamp(-28px, -1.447vw, -19.6792px));
+    -webkit-transform: translate(
+      clamp(-33px, -1.736vw, -23.6096px),
+      clamp(-28px, -1.447vw, -19.6792px)
+    );
+    transform: translate(
+      clamp(-33px, -1.736vw, -23.6096px),
+      clamp(-28px, -1.447vw, -19.6792px)
+    );
   }
   .products__item--double-ampoule .products__anchor {
-    transform: translate(clamp(-22px, -1.157vw, -15.7352px), clamp(-30px, -1.591vw, -21.6376px));
+    -webkit-transform: translate(
+      clamp(-22px, -1.157vw, -15.7352px),
+      clamp(-30px, -1.591vw, -21.6376px)
+    );
+    transform: translate(
+      clamp(-22px, -1.157vw, -15.7352px),
+      clamp(-30px, -1.591vw, -21.6376px)
+    );
   }
   .products__item--essence-toner .products__anchor {
-    transform: translate(clamp(-94px, -4.918vw, -66.8848px), clamp(-8px, -0.434vw, -5.9024px));
+    -webkit-transform: translate(
+      clamp(-94px, -4.918vw, -66.8848px),
+      clamp(-8px, -0.434vw, -5.9024px)
+    );
+    transform: translate(
+      clamp(-94px, -4.918vw, -66.8848px),
+      clamp(-8px, -0.434vw, -5.9024px)
+    );
   }
   .products__item--liposome .products__anchor {
-    transform: translate(clamp(-48px, -2.5vw, -34px), clamp(-30px, -1.591vw, -21.6376px));
+    -webkit-transform: translate(
+      clamp(-48px, -2.5vw, -34px),
+      clamp(-30px, -1.591vw, -21.6376px)
+    );
+    transform: translate(
+      clamp(-48px, -2.5vw, -34px),
+      clamp(-30px, -1.591vw, -21.6376px)
+    );
   }
   .products__item--spray-ampoule .products__anchor {
-    transform: translate(clamp(-156px, -8.102vw, -110.1872px), clamp(-44px, -2.315vw, -31.484px));
+    -webkit-transform: translate(
+      clamp(-156px, -8.102vw, -110.1872px),
+      clamp(-44px, -2.315vw, -31.484px)
+    );
+    transform: translate(
+      clamp(-156px, -8.102vw, -110.1872px),
+      clamp(-44px, -2.315vw, -31.484px)
+    );
   }
 
   .products__icon {
@@ -626,23 +781,11 @@
   .horizontal-scroll__heading {
     gap: min(5.787vw, 100px);
   }
-
-  .slide-up-text__content {
-    top: 50%;
-    transform: translateY(-50%);
-    padding-top: 20px;
-    width: auto;
-    text-align: left;
-  }
-
-  .slide-up-text__paragraph {
-    display: block;
-    margin-top: 35px;
-  }
 }
 
 @media (min-width: 1201px) {
-}
-
-@media (min-width: 1850px) {
+  .en-page .horizontal-scroll__paragraph .accent-title {
+    font-size: 65px;
+    letter-spacing: -1.3px;
+  }
 }

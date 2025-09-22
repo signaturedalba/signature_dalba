@@ -1,23 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
 
   <body>
     <script>
-      // 페이지 진입 시 /ko로 리다이렉트 (히스토리 스택에 추가하지 않음)
-      if (window.location.pathname === '/') {
-        window.history.replaceState(null, '', '/ko');
-        window.location.href = '/ko';
+      // 페이지 진입 시 /kr로 리다이렉트 (히스토리 스택에 추가하지 않음)
+      if (window.location.pathname === "/") {
+        window.history.replaceState(null, "", "/kr");
+        window.location.href = "/kr";
       }
     </script>
   </body>
-
 </html>

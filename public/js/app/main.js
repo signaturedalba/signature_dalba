@@ -10,12 +10,15 @@ const initHeroContainerAnimation = () => {
   };
   const initialWidth = 95;
 
-  const computeInitialTopPx = () => (getInitialTop() / 100) * window.innerHeight;
+  const computeInitialTopPx = () =>
+    (getInitialTop() / 100) * window.innerHeight;
 
   gsap.set(heroContainer, {
     top: `${computeInitialTopPx()}px`,
     width: `${initialWidth}%`,
     opacity: 0,
+    xPercent: -50,
+    x: 0,
     y: 30,
   });
 
@@ -44,7 +47,9 @@ const initHeroContainerAnimation = () => {
       const initialTop = getInitialTop();
 
       if (breakpoint === "md" || breakpoint === "lg") {
-        const currentWidth = initialWidth - (initialWidth - (135 / window.innerWidth) * 100) * progress;
+        const currentWidth =
+          initialWidth -
+          (initialWidth - (135 / window.innerWidth) * 100) * progress;
         heroContainer.style.width = `${Math.max(135, (currentWidth * window.innerWidth) / 100)}px`;
       } else {
         heroContainer.style.width = `${initialWidth}%`;
@@ -65,7 +70,8 @@ const initHeroContainerAnimation = () => {
       }
 
       const initialTopPx = (initialTop / 100) * window.innerHeight;
-      const currentTopPx = initialTopPx + (targetTopPx - initialTopPx) * progress;
+      const currentTopPx =
+        initialTopPx + (targetTopPx - initialTopPx) * progress;
 
       if (currentTopPx <= targetTopPx) {
         wasAtTarget = true;
@@ -85,11 +91,13 @@ const initHeroContainerAnimation = () => {
       const breakpoint = utils.getCurrentBreakpoint();
       const initialTop = getInitialTop();
       if (breakpoint === "md" || breakpoint === "lg") {
-        const currentWidth = initialWidth - (initialWidth - (135 / window.innerWidth) * 100) * 0;
+        const currentWidth =
+          initialWidth - (initialWidth - (135 / window.innerWidth) * 100) * 0;
         heroContainer.style.width = `${Math.max(135, (currentWidth * window.innerWidth) / 100)}px`;
       } else {
         heroContainer.style.width = `${initialWidth}%`;
       }
+      gsap.set(heroContainer, { xPercent: -50, x: 0 });
       heroContainer.style.top = `${computeInitialTopPx()}px`;
       utils.removeClassname(".hero__container", "is-fade-out");
       utils.removeClassname(".hero__container", "is-fade-in");
@@ -104,7 +112,10 @@ const initFadeInTextProgressHighlight = () => {
   fadeInTextElements.forEach((fadeInElement, index) => {
     const defaultColor = "#5A432F";
     const highlightColor = "#ffffff";
-    const wordElements = gsap.utils.toArray(".fade-in-text__word", fadeInElement);
+    const wordElements = gsap.utils.toArray(
+      ".fade-in-text__word",
+      fadeInElement,
+    );
     if (!wordElements.length) return;
 
     const START_HIGHLIGHT_INDEX = 2;
@@ -134,7 +145,8 @@ const initFadeInTextProgressHighlight = () => {
         if (!total) return;
 
         const targetIndex = Math.floor(self.progress * (total - 1) + 0.00001);
-        if (targetIndex === lastIndex || targetIndex < START_HIGHLIGHT_INDEX) return;
+        if (targetIndex === lastIndex || targetIndex < START_HIGHLIGHT_INDEX)
+          return;
         if (targetIndex > lastIndex) {
           setRangeColor(lastIndex + 1, targetIndex, highlightColor);
         } else {
@@ -180,7 +192,11 @@ const initHorizontalSectionsReveal = () => {
     const contentElement = contentElements[i];
     const at = getTimelinePositionForIndex(i);
 
-    timeline.to(itemElement, { clipPath: "inset(0 100% 0 0)", ease: "power2.inOut" }, at);
+    timeline.to(
+      itemElement,
+      { clipPath: "inset(0 100% 0 0)", ease: "power2.inOut" },
+      at,
+    );
     if (contentElement) {
       timeline.to(contentElement, { x: "-150%", ease: "power2.inOut" }, at);
     }
@@ -210,7 +226,7 @@ const initSlideUpTextReveal = () => {
       duration: 1,
       ease: "power2.out",
     },
-    "-=0.7"
+    "-=0.7",
   );
 
   // 텍스트 애니메이션 트리거
@@ -231,7 +247,9 @@ const initSlideUpTextReveal = () => {
     // 해당 비디오의 플레이어 인스턴스 찾기
     const getVideoPlayer = () => {
       if (window.videoPlayers) {
-        return window.videoPlayers.find((player) => player.videoElement === videoElement);
+        return window.videoPlayers.find(
+          (player) => player.videoElement === videoElement,
+        );
       }
       return null;
     };
@@ -529,12 +547,17 @@ const initCarouselScrollAndControls = () => {
 
     const toX = computeCarouselEndOffsetX();
 
-    tween = gsap.fromTo(listElement, { x: 0 }, { x: toX, ease: "linear", duration: 0.05, paused: true });
+    tween = gsap.fromTo(
+      listElement,
+      { x: 0 },
+      { x: toX, ease: "linear", duration: 0.05, paused: true },
+    );
 
     combinedST = ScrollTrigger.create({
       trigger: carouselElement,
       start: "top bottom",
-      end: () => `+=${window.innerHeight + Math.abs(computeCarouselEndOffsetX())}`,
+      end: () =>
+        `+=${window.innerHeight + Math.abs(computeCarouselEndOffsetX())}`,
       scrub: 1,
       invalidateOnRefresh: true,
       fastScrollEnd: true,
@@ -550,7 +573,7 @@ const initCarouselScrollAndControls = () => {
     "resize",
     utils.debounce(() => {
       initializeCarouselScrollTriggers();
-    }, 400)
+    }, 400),
   );
 
   utils.onBreakpointChange({
