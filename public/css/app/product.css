@@ -1,3 +1,7 @@
+.product-content {
+  background-color: var(--color-white);
+}
+
 .hero {
   color: var(--color-white);
 }
@@ -192,7 +196,7 @@
 
   .banner__image {
     -webkit-transform: scale(1.01);
-            transform: scale(1.01);
+    transform: scale(1.01);
   }
 
   .banner__content {
