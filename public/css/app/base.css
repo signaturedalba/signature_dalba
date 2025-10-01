@@ -85,11 +85,14 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   transition: -webkit-transform var(--duration-300) var(--ease-in-out);
   -webkit-transition: -webkit-transform var(--duration-300) var(--ease-in-out);
   transition: transform var(--duration-300) var(--ease-in-out);
   transition: transform var(--duration-300) var(--ease-in-out), -webkit-transform var(--duration-300) var(--ease-in-out);
+  transition:
+    transform var(--duration-300) var(--ease-in-out),
+    -webkit-transform var(--duration-300) var(--ease-in-out);
   transition:
     transform var(--duration-300) var(--ease-in-out),
     -webkit-transform var(--duration-300) var(--ease-in-out);
@@ -107,12 +110,12 @@
 
 .collapse-panel-close:after {
   -webkit-transform: translate(-50%, -50%) rotate(90deg);
-          transform: translate(-50%, -50%) rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .collapse-panel-close.is-active:after {
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .video-player {

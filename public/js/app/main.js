@@ -109,52 +109,93 @@ const initFadeInTextProgressHighlight = () => {
   const fadeInTextElements = gsap.utils.toArray(".fade-in-text");
   if (!fadeInTextElements.length) return;
 
-  fadeInTextElements.forEach((fadeInElement, index) => {
-    const defaultColor = "#5A432F";
-    const highlightColor = "#ffffff";
-    const wordElements = gsap.utils.toArray(
-      ".fade-in-text__word",
-      fadeInElement,
-    );
-    if (!wordElements.length) return;
+  const defaultColor = "#5A432F";
+  const highlightColor = "#ffffff";
+  const START_HIGHLIGHT_INDEX = 2;
 
-    const START_HIGHLIGHT_INDEX = 2;
-    let lastIndex = START_HIGHLIGHT_INDEX;
+  let triggers = [];
 
-    const setRangeColor = (from, to, color) => {
-      for (let i = from; i <= to; i++) {
-        if (wordElements[i]) wordElements[i].style.color = color;
+  const teardown = () => {
+    if (triggers && triggers.length) {
+      triggers.forEach((st) => st && st.kill && st.kill());
+      triggers = [];
+    }
+  };
+
+  const initializeFadeInTextXSAndSM = () => {
+    teardown();
+    fadeInTextElements.forEach((fadeInElement) => {
+      const words = gsap.utils.toArray(".fade-in-text__word", fadeInElement);
+      if (!words.length) return;
+      for (let i = 0; i < words.length; i++) {
+        words[i].style.color = highlightColor;
       }
-    };
 
-    // 초기 색상 설정
-    setRangeColor(0, wordElements.length - 1, defaultColor);
-    if (lastIndex >= 0) setRangeColor(0, lastIndex, highlightColor);
-
-    ScrollTrigger.create({
-      trigger: fadeInElement,
-      start: "top top",
-      end: "+=200%",
-      scrub: 1,
-      pin: true,
-      // pinSpacing: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        const total = wordElements.length;
-        if (!total) return;
-
-        const targetIndex = Math.floor(self.progress * (total - 1) + 0.00001);
-        if (targetIndex === lastIndex || targetIndex < START_HIGHLIGHT_INDEX)
-          return;
-        if (targetIndex > lastIndex) {
-          setRangeColor(lastIndex + 1, targetIndex, highlightColor);
-        } else {
-          setRangeColor(targetIndex + 1, lastIndex, defaultColor);
-        }
-        lastIndex = targetIndex;
-      },
+      const st = ScrollTrigger.create({
+        trigger: fadeInElement,
+        start: "top top",
+        end: "+=30%",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      });
+      triggers.push(st);
     });
+  };
+
+  const enableFadeInTextMDAndUp = () => {
+    teardown();
+    fadeInTextElements.forEach((fadeInElement) => {
+      const wordElements = gsap.utils.toArray(
+        ".fade-in-text__word",
+        fadeInElement,
+      );
+      if (!wordElements.length) return;
+
+      let lastIndex = START_HIGHLIGHT_INDEX;
+
+      const setRangeColor = (from, to, color) => {
+        for (let i = from; i <= to; i++) {
+          if (wordElements[i]) wordElements[i].style.color = color;
+        }
+      };
+
+      setRangeColor(0, wordElements.length - 1, defaultColor);
+      if (lastIndex >= 0) setRangeColor(0, lastIndex, highlightColor);
+
+      const st = ScrollTrigger.create({
+        trigger: fadeInElement,
+        start: "top top",
+        end: "+=200%",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const total = wordElements.length;
+          if (!total) return;
+
+          const targetIndex = Math.floor(self.progress * (total - 1) + 0.00001);
+          if (targetIndex === lastIndex || targetIndex < START_HIGHLIGHT_INDEX)
+            return;
+          if (targetIndex > lastIndex) {
+            setRangeColor(lastIndex + 1, targetIndex, highlightColor);
+          } else {
+            setRangeColor(targetIndex + 1, lastIndex, defaultColor);
+          }
+          lastIndex = targetIndex;
+        },
+      });
+      triggers.push(st);
+    });
+  };
+
+  utils.onBreakpointChange({
+    onXs: initializeFadeInTextXSAndSM,
+    onSm: initializeFadeInTextXSAndSM,
+    onMd: enableFadeInTextMDAndUp,
+    onLg: enableFadeInTextMDAndUp,
   });
 };
 
@@ -256,8 +297,12 @@ const initSlideUpTextReveal = () => {
 
     ScrollTrigger.create({
       trigger: ".slide-up-text",
-      start: "top bottom", // 섹션 최상단이 뷰포트 하단에 위치할 때
-      end: "bottom top", // 섹션 하단이 뷰포트 상단에 위치할 때
+      start: "top top",
+      end: "+=30%",
+      pin: true,
+      // pinSpacing: false,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
       onEnter: () => {
         // 비디오 플레이어 인스턴스를 통해 재생 (상태 관리 포함)
         const player = getVideoPlayer();
@@ -268,34 +313,34 @@ const initSlideUpTextReveal = () => {
           utils.playVideoSafely(videoElement);
         }
       },
-      onLeave: () => {
-        // 비디오 플레이어 인스턴스를 통해 일시정지 (상태 관리 포함)
-        const player = getVideoPlayer();
-        if (player && player.pause) {
-          player.pause();
-        } else {
-          // 플레이어 인스턴스가 없으면 직접 일시정지
-          videoElement.pause();
-        }
-      },
-      onEnterBack: () => {
-        // 스크롤을 되돌려서 다시 진입할 때 재생
-        const player = getVideoPlayer();
-        if (player && player.play) {
-          player.play();
-        } else {
-          utils.playVideoSafely(videoElement);
-        }
-      },
-      onLeaveBack: () => {
-        // 스크롤을 되돌려서 섹션을 벗어날 때 일시정지
-        const player = getVideoPlayer();
-        if (player && player.pause) {
-          player.pause();
-        } else {
-          videoElement.pause();
-        }
-      },
+      // onLeave: () => {
+      //   // 비디오 플레이어 인스턴스를 통해 일시정지 (상태 관리 포함)
+      //   const player = getVideoPlayer();
+      //   if (player && player.pause) {
+      //     player.pause();
+      //   } else {
+      //     // 플레이어 인스턴스가 없으면 직접 일시정지
+      //     videoElement.pause();
+      //   }
+      // },
+      // onEnterBack: () => {
+      //   // 스크롤을 되돌려서 다시 진입할 때 재생
+      //   const player = getVideoPlayer();
+      //   if (player && player.play) {
+      //     player.play();
+      //   } else {
+      //     utils.playVideoSafely(videoElement);
+      //   }
+      // },
+      // onLeaveBack: () => {
+      //   // 스크롤을 되돌려서 섹션을 벗어날 때 일시정지
+      //   const player = getVideoPlayer();
+      //   if (player && player.pause) {
+      //     player.pause();
+      //   } else {
+      //     videoElement.pause();
+      //   }
+      // },
     });
   }
 };

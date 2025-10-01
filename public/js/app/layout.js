@@ -104,7 +104,6 @@ const initSubFooterAnimations = () => {
     onLg: expandSubFooterForTabletAndUp,
   });
 };
-
 const initFooterFadeAnimations = () => {
   let scrollTrigger = null;
 
@@ -112,38 +111,9 @@ const initFooterFadeAnimations = () => {
   const footerHeadingElement = document.querySelector(".footer__heading");
   const footerBodyElement = document.querySelector(".footer__body");
 
-  gsap.set(footerHeadingElement, { opacity: 0 });
-  gsap.set(footerBodyElement, { opacity: 0 });
-
-  const enableFooterFadeForXSAndSM = () => {
-    scrollTrigger = utils.disposeInstance(scrollTrigger);
-
-    // note: onXs, onSM 에서 실행되는 스크롤 트리거
-    scrollTrigger = ScrollTrigger.create({
-      trigger: ".breadcrumb",
-      start: "bottom bottom",
-      end: "top 30%",
-      invalidateOnRefresh: true,
-      scrub: true,
-      onUpdate: (self) => {
-        if (self.progress <= 0.5) {
-          gsap.to(footerBodyElement, {
-            opacity: self.progress * 2,
-            duration: 0,
-          });
-          gsap.set(footerHeadingElement, { opacity: 0 });
-        } else {
-          gsap.set(footerBodyElement, { opacity: 1 });
-          gsap.to(footerHeadingElement, {
-            opacity: (self.progress - 0.5) * 2,
-            duration: 0,
-          });
-        }
-      },
-    });
-  };
-
   const enableFooterFadeForMDAndLG = () => {
+    gsap.set(footerHeadingElement, { opacity: 0 });
+    gsap.set(footerBodyElement, { opacity: 0 });
     scrollTrigger = utils.disposeInstance(scrollTrigger);
 
     // note: onMd, onLg 에서 실행되는 스크롤 트리거
@@ -164,8 +134,6 @@ const initFooterFadeAnimations = () => {
   };
 
   utils.onBreakpointChange({
-    onXs: enableFooterFadeForXSAndSM,
-    onSm: enableFooterFadeForXSAndSM,
     onMd: enableFooterFadeForMDAndLG,
     onLg: enableFooterFadeForMDAndLG,
   });

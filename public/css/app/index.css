@@ -1,0 +1,7 @@
+/* CSS 모듈 import */
+@import "./tokens.css";
+@import "./font.css";
+@import "./normalize.css";
+@import "./common.css";
+@import "./layout.css";
+@import "./main.css";

@@ -22,8 +22,8 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -63,7 +63,7 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   height: 90%;
 }
 
@@ -77,8 +77,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-top: 15px;
 }
 
@@ -96,11 +96,11 @@
   left: 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 25px;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   padding-top: min(20vw, 80px);
   width: 100%;
   text-align: center;
@@ -118,8 +118,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-weight: 500;
   font-size: 19px;
   line-height: 131.579%;
@@ -143,10 +143,10 @@
     display: flex;
     top: 50%;
     -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
     -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    transform: translateY(-50%);
     padding-bottom: 50px;
     text-align: left;
   }
@@ -162,8 +162,8 @@
 
   .product__item {
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
   }
 
   .product__list--new {
@@ -184,6 +184,15 @@
 
   .product__info {
     margin-top: 10px;
+  }
+
+  .banner {
+    overflow: hidden;
+  }
+
+  .banner__image {
+    -webkit-transform: scale(1.01);
+            transform: scale(1.01);
   }
 
   .banner__content {
