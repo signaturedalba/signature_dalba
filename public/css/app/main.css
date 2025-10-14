@@ -126,13 +126,18 @@
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   will-change: transform;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#231911), to(#231911));
-  background-image: linear-gradient(to bottom, #231911, #231911);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#231911), to(#19140f));
+  background-image: linear-gradient(to bottom, #231911, #19140f);
   height: 100vh;
   /* height: calc(var(--vh, 1vh) * 100); */
   min-height: 100vh;
   /* min-height: calc(var(--vh, 1vh) * 100); */
   text-align: center;
+}
+
+.fade-in-text--second {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#19140f), to(var(--color-black)));
+  background-image: linear-gradient(to bottom, #19140f, var(--color-black));
 }
 
 .fade-in-text__paragraph {
